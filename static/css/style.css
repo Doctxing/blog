@@ -72,7 +72,7 @@ body, html {
 }
 
 #team-grid {
-    grid-template-areas:"a a b b"
+    grid-template-areas:"a b""c d""e f"
 }
 
 .avatar {
@@ -94,7 +94,7 @@ body, html {
 
 @media only screen and (max-width: 969px) {
     #team-grid {
-        grid-template-areas:"a a" "b b"
+        grid-template-areas:"a " "b ""c ""d "
     }
 }
 
