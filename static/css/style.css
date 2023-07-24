@@ -72,7 +72,10 @@ body, html {
 }
 
 #team-grid {
-    grid-template-areas:"a b""c d""e f"
+    grid-template-areas:
+            "a 0"
+            "b c"
+            "d e"
 }
 
 .avatar {
