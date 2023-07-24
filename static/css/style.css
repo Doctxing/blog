@@ -73,7 +73,7 @@ body, html {
 
 #team-grid {
     grid-template-areas:
-            "a 0"
+            "a z"
             "b c"
             "d e"
 }
