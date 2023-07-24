@@ -8,20 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoctxingのBlog || trick</title>
     <link rel="icon" href="static/image/avartar.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="static/css/swiper.min.css">
-     <!-- Custom CSS -->
+	<!-- Custom CSS -->
     <link rel="stylesheet" href="static/css/style.css">
     <style>
         html {
             scroll-behavior: smooth;
-        }
-        .imgstyle1{
-            border-radius: 50%;
-            overflow: hidden;
         }
     </style>
   </head>
@@ -81,16 +77,6 @@
                                 <path d="M1 2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 9H1V8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6H1V5H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 2H1Zm11 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7Zm2 0a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7ZM3.5 10a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6ZM4 4h-.5a.5.5 0 0 0 0 1H4v1h-.5a.5.5 0 0 0 0 1H4a1 1 0 0 0 1 1v.5a.5.5 0 0 0 1 0V8h1v.5a.5.5 0 0 0 1 0V8a1 1 0 0 0 1-1h.5a.5.5 0 0 0 0-1H9V5h.5a.5.5 0 0 0 0-1H9a1 1 0 0 0-1-1v-.5a.5.5 0 0 0-1 0V3H6v-.5a.5.5 0 0 0-1 0V3a1 1 0 0 0-1 1Zm7 7.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 0-.5.5Z"/>
                             </svg>
                             <span class="text-md text-white font-medium pl-2">Computer</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="grid h-16 grid-flow-row grid-cols-2 mx-8">
-                    <a onclick="if (!window.__cfRLUnblockHandlers) return false; closeNav();" href="chemistry.html" class="nav-tile flex flex-col justify-center px-2 py-2 m-1 rounded-full" data-cf-modified-a5e408ddc0cb407a200b9de1-="">
-                        <div class="flex px-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 16 16">
-                                <path d="M13.354.646a1.207 1.207 0 0 0-1.708 0L8.5 3.793l-.646-.647a.5.5 0 1 0-.708.708L8.293 5l-7.147 7.146A.5.5 0 0 0 1 12.5v1.793l-.854.853a.5.5 0 1 0 .708.707L1.707 15H3.5a.5.5 0 0 0 .354-.146L11 7.707l1.146 1.147a.5.5 0 0 0 .708-.708l-.647-.646 3.147-3.146a1.207 1.207 0 0 0 0-1.708l-2-2zM2 12.707l7-7L10.293 7l-7 7H2v-1.293z"/>
-                            </svg>
-                            <span class="text-md text-white font-medium pl-2">Chemistry</span>
                         </div>
                     </a>
                 </div>
@@ -156,7 +142,7 @@
             <nav class="w-full flex relative justify-between items-center mx-auto sm:px-4 lg:px-8 px-4 h-20" style="background-color: #d7e8ff00;">
                 <!-- Home -->
                 <a href="index.html" class="navbar-btn h-14 items-center inline-flex bg-white px-2 lg:px-3 py-3 rounded-2xl hover:bg-blue-300 shadow-lg">
-                    <img class="imgstyle1" src="static/image/avartar.jpg" width="26" height="26" alt="">
+                    <img alt="" class="avatar" height="26" src="static/image/avartar.jpg" width="26">
                     <span class="inline font-medium pt-0.5 lg:ml-2 lg:mr-1">DXのBlog</span>
                 </a>
                 <div class="hidden md:block flex-shrink flex-grow-0 justify-start px-1 lg:px-2">
@@ -166,7 +152,6 @@
                             <a href="biology.html" class="px-2 lg:px-4 py-2 lg:mx-1 font-medium transition-colors duration-200 transform rounded-full hover:bg-blue-300">Biology</a>
                             <a href="mathematics.html" class="px-2 lg:px-4 py-2 lg:mx-1 font-medium transition-colors duration-200 transform rounded-full hover:bg-blue-300">Mathematics</a>
                             <a href="computer.html" class="px-2 lg:px-4 py-2 lg:mx-1 font-medium transition-colors duration-200 transform rounded-full hover:bg-blue-300">Computer</a>
-                            <a href="chemistry.html" class="px-2 lg:px-4 py-2 mr-2 lg:ml-1 font-medium transition-colors duration-200 transform rounded-full hover:bg-blue-300">Chemistry</a>
                         </div>
                     </div>
                 </div>

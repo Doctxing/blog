@@ -7,14 +7,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoctxingのBlog</title>
-    <link rel="icon" class="avatar" href="static/image/avartar.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="static/image/avartar.png" rel="icon">
+    <link href="https://cdn.bootcdn.net/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="static/css/swiper.min.css">
-     <!-- Custom CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="static/css/style.css">
+    <!-- Video js -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/video.js/7.4.1/video-js.css" rel="stylesheet">
+    <script src='https://cdn.bootcdn.net/ajax/libs/video.js/7.4.1/video.js'></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js" type="text/javascript"></script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -200,9 +204,14 @@
             <img class="avatar" src="static/image/avartar.jpg" height="80" width="80" alt="">
             <span class="font-medium text-6xl md:pl-5">Doctxing</span>
         </div>
-        <video controls width="1024px">
-            <source src="https://doctxing.github.io/static/video/Journey.mp4" type="video/mp4">
-        </video>
+        <div>
+            <style>
+                .video-js .vjs-tech {position: relative !important;}
+            </style>
+            <video class="video-js vjs-default-skin vjs-big-play-centered" controls data-setup='{}' id="myVideo" preload="auto" style='width: 100%;height: auto'>
+                <source id="source" src="https://hls.cntv.myhwcdn.cn/asp/hls/main/0303000a/3/default/633150e66c884adab0c5d782e66d63b0/main.m3u8?maxbr=2048" type="application/x-mpegURL"></source>
+            </video>
+        </div>
         <section id="legal">
             <div class="container mt-8">
                 <h2>为什么要写博客呢？</h2>
