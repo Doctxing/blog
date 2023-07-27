@@ -1,5 +1,8 @@
 
 # Doctxing的博客源码🫠
+[![license](/static/license_svgs/license-gitee.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
+[![license](/static/license_svgs/license-github.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
+
 
 ![こくしぼう](/static/image/uppage.png)
 
@@ -24,7 +27,7 @@
   - 算法 / Algorithm
   - 硬件 / Hardware
   - 一些设备树 / Device Tree
-  - ···
+  - ...
   
 - 数学 / mathematics
   - 
