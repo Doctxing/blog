@@ -1,7 +1,7 @@
 
 # Doctxing的博客源码🫠
-[![license](/static/license_svgs/license-gitee.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
-[![license](/static/license_svgs/license-github.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
+[![license](/static/license/license_gitee.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
+[![license](/static/license/license_github.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
 
 
 ![こくしぼう](/static/image/uppage.png)
@@ -96,7 +96,7 @@
             jquery.slim.min.js
             main.js
             popper.min.js
-            rocket-loader.min.js
+            rocket_loader.js
             
 ```
 

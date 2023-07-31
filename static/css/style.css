@@ -73,9 +73,9 @@ body, html {
 
 #team-grid {
     grid-template-areas:
-            "a z"
-            "b c"
-            "d e"
+            "a b"
+            "c d"
+            "e f"
 }
 
 .avatar {
