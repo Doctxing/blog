@@ -1,0 +1,109 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="536" height="296"
+     viewBox="0 0 536 296" fill="none">
+    <rect x="0" y="0" width="0" height="0" fill="rgba(249, 249, 249, 1)"/>
+    <g opacity="1" transform="translate(0 0)  rotate(0)">
+        <g mask="url(#bg-mask-0)">
+            <path id="直线 3" style="fill:#248182; opacity:1;"
+                  d="M116.879,145.256l10.53,-0.89l0.242,2.872l-10.53,0.89zM136.981,143.557l10.531,-0.89l0.242,2.872l-10.53,0.89zM157.084,141.858l10.53,-0.891l0.243,2.872l-10.53,0.89zM177.187,140.158l10.53,-0.89l0.243,2.872l-10.53,0.89zM197.29,138.459l10.53,-0.89l0.243,2.872l-10.53,0.89zM217.393,136.76l10.53,-0.89l0.243,2.871l-10.53,0.891zM237.496,135.06l10.53,-0.89l0.242,2.872l-10.53,0.89zM257.598,133.361l10.531,-0.89l0.242,2.872l-10.53,0.89zM277.701,131.662l10.53,-0.89l0.243,2.871l-10.53,0.891zM297.804,129.962l10.53,-0.89l0.243,2.872l-10.53,0.89zM317.907,128.263l10.53,-0.89l0.243,2.872l-10.53,0.89zM338.01,126.564l10.53,-0.89l0.243,2.872l-10.53,0.89zM358.113,124.864l10.53,-0.89l0.242,2.872l-10.53,0.89zM378.215,123.165l10.531,-0.89l0.242,2.872l-10.53,0.89z"></path>
+            <path id="路径 1" style="fill:#248182; opacity:1;"
+                  d="M182.486,114.482M182.486,114.482c3.116,0 6.21,0.98367 9.282,2.951c6.11267,3.91533 9.169,10.67533 9.169,20.28h-2.882c0,-8.554 -2.61367,-14.505 -7.841,-17.853c-2.59867,-1.664 -5.17467,-2.496 -7.728,-2.496z"></path>
+            <path id="路径 2" style="fill:#248182; opacity:1;"
+                  d="M175.669,140.867M175.669,140.867c1.528,2.76533 2.34867,5.866 2.462,9.302c0.23267,7.03133 -3.20733,12.28767 -10.32,15.769l-1.267,-2.588c5.996,-2.93533 8.89833,-7.29733 8.707,-13.086c-0.098,-2.974 -0.79967,-5.64167 -2.105,-8.003z"></path>
+            <path id="直线 1" style="fill:#248182; opacity:1;"
+                  d="M118.054,145.405l214.317,-107.6927l1.294,2.5752l-214.317,107.6925z"></path>
+            <g opacity="1" transform="translate(186.73822021484375 146.69216918945312)  rotate(0)">
+                <text>
+                    <tspan x="0" y="20.059245283018868" font-size="17.29245283018868" line-height="0" fill="#248182"
+                           opacity="1" font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0">β
+                    </tspan>
+                </text>
+            </g>
+            <path id="路径 4" style="fill:#A584E3; opacity:1;"
+                  d="M220.288,96.3725M220.288,96.3725c4.62067,7.619 8.08133,16.93983 10.382,27.9625c4.618,22.11933 1.14567,41.805 -10.417,59.057l-2.394,-1.605c11.11267,-16.58067 14.44267,-35.535 9.99,-56.863c-2.234,-10.70067 -5.57567,-19.71967 -10.025,-27.057z"></path>
+            <g opacity="1" transform="translate(236.91561889648438 148.40170288085938)  rotate(0)">
+                <text>
+                    <tspan x="0" y="20.059245283018868" font-size="17.29245283018868" line-height="0" fill="#A584E3"
+                           opacity="1" font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0">θ
+                    </tspan>
+                    <tspan x="0" y="45.09871698113207" font-size="17.29245283018868" line-height="0" fill="#A584E3"
+                           opacity="1" font-family="SourceHanSansCN-Bold" font-weight="Bold"
+                           letter-spacing="0"></tspan>
+                </text>
+            </g>
+            <g opacity="1" transform="translate(204.59771728515625 109.08538818359375)  rotate(0)">
+                <text>
+                    <tspan x="0" y="20.059245283018868" font-size="17.29245283018868" line-height="0" fill="#248182"
+                           opacity="1" font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0">α
+                    </tspan>
+                </text>
+
+            </g>
+            <path id="直线 2" style="fill:#248182; opacity:1;"
+                  d="M117.483,145.335l259.393,92.307l-0.967,2.715l-259.392,-92.307z"></path>
+            <path id="直线 4" style="fill:#248182; opacity:1;"
+                  d="M280.917,71.6879c-2.572,0.4166 -5.187,-0.962 -6.234,-3.4716c-1.224,-2.9363 0.164,-6.3088 3.101,-7.5329c2.936,-1.224 6.309,0.1641 7.533,3.1003c1.019,2.4449 0.227,5.1923 -1.762,6.75l23.528,53.7783c2.572,-0.417 5.187,0.962 6.234,3.472c1.224,2.936 -0.164,6.309 -3.101,7.533c-2.936,1.224 -6.309,-0.164 -7.533,-3.101c-1.019,-2.445 -0.227,-5.192 1.762,-6.75z"></path>
+            <path id="直线 5" style="fill:#248182; opacity:1;"
+                  d="M304.316,134.429c-2.004,-1.664 -2.684,-4.541 -1.481,-6.979c1.409,-2.852 4.863,-4.023 7.715,-2.615c2.852,1.409 4.023,4.863 2.615,7.715c-1.173,2.375 -3.764,3.584 -6.245,3.109l-29.236,61.912c2.004,1.664 2.684,4.541 1.481,6.979c-1.409,2.852 -4.863,4.023 -7.715,2.615c-2.852,-1.409 -4.023,-4.863 -2.615,-7.715c1.173,-2.375 3.764,-3.584 6.245,-3.109z"></path>
+            <g opacity="1" transform="translate(268 34)  rotate(0)">
+                <text>
+                    <tspan x="0" y="20.0564" font-size="17.29" line-height="0" fill="#248182" opacity="1"
+                           font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0">B
+                    </tspan>
+                </text>
+
+            </g>
+            <g opacity="1" transform="translate(291 180)  rotate(0)">
+                <text>
+                    <tspan x="0" y="20.0564" font-size="17.29" line-height="0" fill="#248182" opacity="1"
+                           font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0">C
+                    </tspan>
+                </text>
+
+            </g>
+            <path id="路径 3" style="fill:#A584E3; opacity:1;"
+                  d="M300.623,117.935l-17.5,1.5l-0.123,-1.435l1.371,-0.441l4.695,14.608l-7.819,13.553l-1.247,-0.72l-0.033,-1.44l22,-0.5l0.066,2.88l-24.56,0.558l8.78,-15.218l1.247,0.72l-1.371,0.441l-5.053,-15.721l19.301,-1.655z"></path>
+            <g opacity="1" transform="translate(315 103)  rotate(0)">
+                <text>
+                    <tspan x="0" y="20.0564" font-size="17.29" line-height="0" fill="#248182" opacity="1"
+                           font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0">A
+                    </tspan>
+                </text>
+
+            </g>
+            <g opacity="1" transform="translate(397 102)  rotate(0)">
+                <text>
+                    <tspan x="0" y="20.0564" font-size="17.29" line-height="0" fill="#248182" opacity="1"
+                           font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0">l1
+                    </tspan>
+                </text>
+
+            </g>
+            <g opacity="1" transform="translate(342 16)  rotate(0)">
+                <text>
+                    <tspan x="0" y="20.0564" font-size="17.29" line-height="0" fill="#000000" opacity="1"
+                           font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0"></tspan>
+                    <tspan x="0" y="20.0564" font-size="17.29" line-height="0" fill="#248182" opacity="1"
+                           font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0">l2
+                    </tspan>
+                </text>
+
+            </g>
+            <g opacity="1" transform="translate(383 213)  rotate(0)">
+                <text>
+                    <tspan x="0" y="20.0564" font-size="17.29" line-height="0" fill="#248182" opacity="1"
+                           font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0">l3
+                    </tspan>
+                </text>
+
+            </g>
+            <g opacity="1" transform="translate(99 142)  rotate(0)">
+                <text>
+                    <tspan x="0" y="20.0564" font-size="17.29" line-height="0" fill="#248182" opacity="1"
+                           font-family="SourceHanSansCN-Bold" font-weight="Bold" letter-spacing="0">O
+                    </tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+
+</svg>

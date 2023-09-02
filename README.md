@@ -1,14 +1,13 @@
 # Doctxing的博客副页🫠
-[![license](/static/license/license_gitee.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
-[![license](/static/license/license_github.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
 
+[![license](static/license/license_gitee.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
+[![license](static/license/license_github.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
 
-![こくしぼう](/static/image/uppage.png)
+![こくしぼう](static/image/uppage.png)
 
 > 弱者没有权利，无从选择。
->
+> 
 > ——こくしぼう
-
 
 ## 我的工程项目：
 
@@ -16,7 +15,7 @@
 
 > ### [DoctxingのSource Storage](https://doctxing.github.io) 欢迎来访😉
 
-****
+---
 
 我是哈尔滨工业大学深圳校区的学生，实在是无聊便在高三开始了网页的建设，如今过去了好久，网站建设的逐渐完善。
 
@@ -24,31 +23,35 @@
 
 我非常赞赏[こくしぼう](中文名称为黑死牟 "こくしぼう：")的精神，那种想尽一切办法变强，超越的品格。
 
-****
+---
 
 ## 博客以知识共享为主，文件存储为辅，其次还有一些和原来同学的小互动。知识内容目前包括：
 
 - 计算机 / computer
-  -
-  - 算法 / Algorithm
-  - 硬件 / Hardware
-  - 一些设备树 / Device Tree
-  - ...
 
+---
+
+- 算法 / Algorithm
+- 硬件 / Hardware
+- 一些设备树 / Device Tree
+- ...
 - 数学 / mathematics
-  -
-  - 数学分析 / Mathematical Analysis
-  - 高等代数 / Advanced Algebra
-  - 解析几何 / Analytic Geometry
-  - 常微分方程 / Ordinary Differential Equations
-  - ...
 
+---
+
+- 数学分析 / Mathematical Analysis
+- 高等代数 / Advanced Algebra
+- 解析几何 / Analytic Geometry
+- 常微分方程 / Ordinary Differential Equations
+- ...
 - 物理 / physics
-  -
-  - 量子力学 / Quantum Mechanics
-  - ...
 
-****
+---
+
+- 量子力学 / Quantum Mechanics
+- ...
+
+---
 
 ## blog的源码目录结构
 
@@ -103,13 +106,13 @@
             main.js
             popper.min.js
             rocket_loader.js
-
 ```
 
-*****
+---
 
 ## source storage的源码目录结构
 
 ```
 underdeveloping...
 ```
+
