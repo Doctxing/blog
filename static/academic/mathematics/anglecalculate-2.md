@@ -1,15 +1,3 @@
-<!doctype html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/7.0.5/marked.min.js" integrity="sha512-T/2KmGrRMnwOlScm1fuid2Rhdo48SZWxkCiWPU7PVPrIOKhRDZZ2cDcdzeOyUqsZUoVtWNSg0FvSw9cmpRyswA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
-	<title>Marked.js</title>
-</head>
-<body>
-<div id="$m" class="markdown-body"></div>
-<textarea id="$t" style="display:none">
 # The Angle Calculation Method-2
 
 # 立体几何算角法-2
@@ -24,7 +12,7 @@ $$
 \sin\alpha\cdot\sin\delta=\sin\beta
 $$
 
-![](mathematics/2-0.svg)
+![](2-0.svg)
 
 ---
 
@@ -32,7 +20,7 @@ $$
 
 类似的，我们进行标记以及添加辅助线：
 
-![](mathematics/2-1.svg)
+![](2-1.svg)
 
 - 过点D作DO垂直于面B，垂足为O
 - 记∠α，∠β，∠δ。
@@ -40,7 +28,7 @@ $$
 
 然后我们再作垂线：
 
-![](mathematics/2-2.svg)
+![](2-2.svg)
 
 $$
 \sin\alpha=\frac{DE}{DH}
@@ -66,11 +54,7 @@ $$
 
 是否任意情况适用呢？如果是钝角还适用吗？
 
-$ans$ : yes!!
+$ans$: yes!!
 
 推导过程相同，可自行尝试。
-  </textarea>
-<script>$m.innerHTML = marked.parse($t.value);</script>
-</body>
-</html>
 
