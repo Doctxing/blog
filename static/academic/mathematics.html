@@ -1,32 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8" />
-	<title></title>
-	<meta http-equiv="XCompatible" content="IE=edge,chrome=1" />
-	<meta name="keywords" content="Tracker" />
-	<meta name="description" content="Updated" />
-	<meta name="author" contect="" />
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-	<link rel="icon" type="image/x-icon" href="data:image/png;base64,">
-	<link rel="stylesheet" href="https://cdn.staticfile.org/docsify/4.12.1/themes/vue.css" />
-	<style  type="text/css">@media screen and (max-width: 768px) {.markdown-section {max-width: 100%;} .markdown-section h1 {font-size: 1.7rem;}} a {text-decoration:none} summary {cursor: pointer;} ::-webkit-scrollbar {width: 0px;height: 0px} .markdown-section blockquote p {font-weight: normal;margin-left: 0;}</style>
-	<script>if(location.hash == "" && window.navigator.language.slice(0,2) == "zh") {location.hash="#/zh"}</script>
+	<meta charset="utf-8">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/7.0.5/marked.min.js" integrity="sha512-T/2KmGrRMnwOlScm1fuid2Rhdo48SZWxkCiWPU7PVPrIOKhRDZZ2cDcdzeOyUqsZUoVtWNSg0FvSw9cmpRyswA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.js">
+	</script>
+
+	<title>Marked.js</title>
 </head>
 <body>
-<embed src="https://sz-sycdn.kuwo.cn/efd728d2a9ea70cd765e4d94096d4867/622ea3b4/resource/n2/2/94/2771625797.mp3" hidden="true" autostart="true" loop="true">
-<div id="app">Load...</div>
-<script>
-	window.$docsify={
-		name:'',
-		repo:'',
-		loadNavbar:true,
-		auto2top:true,
-		noEmoji: true,
-		themeColor:'#4B93F1',
-		alias:{'/en': 'README', '/zh': 'README-ZH'}
-	}
-</script>
-<script src="https://cdn.staticfile.org/docsify/4.12.1/docsify.min.js"></script>
+<div id="$m" class="markdown-body"></div>
+<textarea id="$t" style="display:none">
+$$
+\oiint_S{\displaystyle\\sin\theta\,d\theta\,d\varphi}
+{\displaystyle\ =\int_{0}^{\pi}\sin\theta d\theta \int_{0}^{2\pi}d\varphi=[ -\cos\theta]_ {0}^{\pi}(2\pi)=4\pi}
+$$
+</textarea>
+<script>$m.innerHTML = marked.parse($t.value);</script>
 </body>
 </html>

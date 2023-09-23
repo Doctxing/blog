@@ -3,7 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/7.0.5/marked.min.js" integrity="sha512-T/2KmGrRMnwOlScm1fuid2Rhdo48SZWxkCiWPU7PVPrIOKhRDZZ2cDcdzeOyUqsZUoVtWNSg0FvSw9cmpRyswA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.js">
+	</script>
 
 	<title>Marked.js</title>
 </head>
@@ -66,10 +68,15 @@ $$
 
 是否任意情况适用呢？如果是钝角还适用吗？
 
-$ans$ : yes!!
+ans: yes!!
 
 推导过程相同，可自行尝试。
-  </textarea>
+
+$$
+\oiint_S{\displaystyle\\sin\theta\,d\theta\,d\varphi}
+{\displaystyle\ =\int_{0}^{\pi}\sin\theta d\theta \int_{0}^{2\pi}d\varphi=[ -\cos\theta]_ {0}^{\pi}(2\pi)=4\pi}
+$$
+	</textarea>
 <script>$m.innerHTML = marked.parse($t.value);</script>
 </body>
 </html>
