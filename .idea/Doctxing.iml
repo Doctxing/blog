@@ -11,5 +11,10 @@
     <orderEntry type="library" name="@fortawesome/fontawesome-free" level="application" />
     <orderEntry type="library" name="42b73aa873" level="application" />
     <orderEntry type="library" name="tailwindcss" level="application" />
+    <orderEntry type="library" name="Swiper" level="application" />
+    <orderEntry type="library" name="tailwindcss" level="application" />
+    <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="video.js" level="application" />
+    <orderEntry type="library" name="videojs-contrib-hls" level="application" />
   </component>
 </module>

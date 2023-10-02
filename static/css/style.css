@@ -71,7 +71,7 @@ body, html {
     justify-content: center
 }
 
-#team-grid {
+#thankwall-grid {
     grid-template-areas:
             "a b"
             "c d"
@@ -95,8 +95,8 @@ body, html {
     max-width: none
 }
 
-@media only screen and (max-width: 969px) {
-    #team-grid {
+@media only screen and (max-width: 1072px) {
+    #thankwall-grid {
         grid-template-areas:"a " "b ""c ""d "
     }
 }

@@ -1,85 +1,60 @@
-const _0x4c2a59 = _0x3584;
-(function(_0x59dd42, _0x82736b) {
-    const _0x42c292 = _0x3584
-        , _0x191e41 = _0x59dd42();
-    while (!![]) {
-        try {
-            const _0x3d6282 = -parseInt(_0x42c292(0x1fe)) / 0x1 + -parseInt(_0x42c292(0x1fa)) / 0x2 + -parseInt(_0x42c292(0x20a)) / 0x3 + parseInt(_0x42c292(0x1ff)) / 0x4 * (-parseInt(_0x42c292(0x200)) / 0x5) + parseInt(_0x42c292(0x212)) / 0x6 * (parseInt(_0x42c292(0x20d)) / 0x7) + parseInt(_0x42c292(0x217)) / 0x8 * (parseInt(_0x42c292(0x213)) / 0x9) + -parseInt(_0x42c292(0x201)) / 0xa * (-parseInt(_0x42c292(0x1f3)) / 0xb);
-            if (_0x3d6282 === _0x82736b)
-                break;
-            else
-                _0x191e41['push'](_0x191e41['shift']());
-        } catch (_0x5416da) {
-            _0x191e41['push'](_0x191e41['shift']());
+//coded by Doctxing
+//go back to the top 按钮
+var mybutton = document['getElementById']('back-to-top');
+
+window['onscroll'] = function () {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    document['body']['scrollTop'] > 20 || document['documentElement']['scrollTop'] > 20 ? mybutton['style']['display'] = 'block' : mybutton['style']['display'] = 'none';
+}
+
+function topFunction() {
+    document['body']['scrollTop'] = 0, document['documentElement']['scrollTop'] = 0;
+}
+
+const modal = document['querySelector']('.main-modal'),
+    closeNav = () => {
+        modal['classList']['remove']('fadeIn'), modal['classList']['add']('fadeOut'), document['querySelector']('body')['style']['overflow'] = 'visible', setTimeout(() => {
+            modal['style']['display'] = 'none';
+        }, 500);
+    },
+    //时间及日期
+    openNav = () => {
+        modal['classList']['remove']('fadeOut'), modal['classList']['add']('fadeIn'), modal['style']['display'] = 'flex';
+        const GetTime = new Date();
+        let Hour = GetTime['getHours']();
+        Hour < 10 && (Hour = '0' + Hour);
+        let Minutes = GetTime['getMinutes']();
+        Minutes < 10 && (Minutes = '0' + Minutes);
+        document['getElementById']('time')['innerHTML'] = Hour + ':' + Minutes;
+        const Day = GetTime['toDateString']()['replace']('2023', '');
+        document['getElementById']('date')['innerHTML'] = Day['substring'](0, 3) + ',' + Day['substring'](3), document['querySelector']('body')['style']['overflow'] = 'hidden';
+        let Betery = navigator['getBattery']();
+        Betery['then'](show);
+
+        function show(num_bet) {
+            BetteryShow(num_bet), BetteryPercentage(num_bet);
         }
-    }
-}(_0x3483, 0x6bd4f));
-const modal = document[_0x4c2a59(0x21b)](_0x4c2a59(0x1f4))
-    , closeNav = ()=>{
-        const _0x3f64f0 = _0x4c2a59;
-        modal['classList'][_0x3f64f0(0x208)](_0x3f64f0(0x225)),
-            modal['classList']['add'](_0x3f64f0(0x229)),
-            document[_0x3f64f0(0x21b)](_0x3f64f0(0x209))[_0x3f64f0(0x21a)][_0x3f64f0(0x202)] = _0x3f64f0(0x20e),
-            setTimeout(()=>{
-                    const _0x33c24f = _0x3f64f0;
-                    modal[_0x33c24f(0x21a)]['display'] = 'none';
-                }
-                , 0x1f4);
-    }
-    , openNav = ()=>{
-        const _0x11f671 = _0x4c2a59;
-        modal[_0x11f671(0x22c)][_0x11f671(0x208)](_0x11f671(0x229)),
-            modal[_0x11f671(0x22c)][_0x11f671(0x207)](_0x11f671(0x225)),
-            modal['style'][_0x11f671(0x22a)] = _0x11f671(0x204);
-        const _0x3e8bdb = new Date();
-        let _0x57dea1 = _0x3e8bdb['getHours']();
-        _0x57dea1 < 0xa && (_0x57dea1 = '0' + _0x57dea1);
-        let _0x2bfffb = _0x3e8bdb['getMinutes']();
-        _0x2bfffb < 0xa && (_0x2bfffb = '0' + _0x2bfffb);
-        document['getElementById'](_0x11f671(0x223))['innerHTML'] = _0x57dea1 + ':' + _0x2bfffb;
-        const _0x2f8a71 = _0x3e8bdb[_0x11f671(0x1fb)]()[_0x11f671(0x20b)](_0x11f671(0x215), '');
-        document[_0x11f671(0x203)](_0x11f671(0x206))[_0x11f671(0x224)] = _0x2f8a71[_0x11f671(0x216)](0x0, 0x3) + ',\x20' + _0x2f8a71[_0x11f671(0x216)](0x3),
-            document[_0x11f671(0x21b)]('body')[_0x11f671(0x21a)][_0x11f671(0x202)] = _0x11f671(0x20f);
-        let _0x5d6e40 = navigator['getBattery']();
-        _0x5d6e40['then'](_0x1b0673);
-        function _0x1b0673(_0x22e8a1) {
-            _0x1b962f(_0x22e8a1),
-                _0x20fd18(_0x22e8a1);
+
+        //电量
+        function BetteryPercentage(per_bet) {
+            document['getElementById']('percentage')['innerHTML'] = Math.round(per_bet['level'] * 100) + '%';
         }
-        function _0x20fd18(_0x2a80fa) {
-            const _0x36a31d = _0x11f671;
-            document['getElementById'](_0x36a31d(0x211))[_0x36a31d(0x224)] = _0x2a80fa[_0x36a31d(0x22b)] * 0x64 + '%';
-        }
-        function _0x1b962f(_0x5e79b0) {
-            const _0x38fe3a = _0x11f671;
-            if (_0x5e79b0[_0x38fe3a(0x22b)] < 0.1)
-                document[_0x38fe3a(0x203)](_0x38fe3a(0x1fd))[_0x38fe3a(0x224)] = '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16,20H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>';
-            else {
-                if (_0x5e79b0[_0x38fe3a(0x22b)] >= 0.1 && _0x5e79b0['level'] < 0.2)
-                    document['getElementById'](_0x38fe3a(0x1fd))['innerHTML'] = '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16,18H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>';
-                else {
-                    if (_0x5e79b0[_0x38fe3a(0x22b)] >= 0.2 && _0x5e79b0[_0x38fe3a(0x22b)] < 0.3)
-                        document[_0x38fe3a(0x203)](_0x38fe3a(0x1fd))[_0x38fe3a(0x224)] = '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16,18H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>';
-                    else {
-                        if (_0x5e79b0[_0x38fe3a(0x22b)] >= 0.3 && _0x5e79b0['level'] < 0.4)
-                            document[_0x38fe3a(0x203)](_0x38fe3a(0x1fd))['innerHTML'] = _0x38fe3a(0x226);
-                        else {
-                            if (_0x5e79b0[_0x38fe3a(0x22b)] >= 0.4 && _0x5e79b0[_0x38fe3a(0x22b)] < 0.5)
-                                document[_0x38fe3a(0x203)]('battery')[_0x38fe3a(0x224)] = _0x38fe3a(0x22f);
-                            else {
-                                if (_0x5e79b0[_0x38fe3a(0x22b)] >= 0.5 && _0x5e79b0[_0x38fe3a(0x22b)] < 0.6)
-                                    document[_0x38fe3a(0x203)](_0x38fe3a(0x1fd))[_0x38fe3a(0x224)] = _0x38fe3a(0x1f6);
-                                else {
-                                    if (_0x5e79b0[_0x38fe3a(0x22b)] >= 0.6 && _0x5e79b0['level'] < 0.7)
-                                        document[_0x38fe3a(0x203)](_0x38fe3a(0x1fd))[_0x38fe3a(0x224)] = _0x38fe3a(0x218);
-                                    else {
-                                        if (_0x5e79b0['level'] >= 0.7 && _0x5e79b0[_0x38fe3a(0x22b)] < 0.8)
-                                            document[_0x38fe3a(0x203)](_0x38fe3a(0x1fd))[_0x38fe3a(0x224)] = _0x38fe3a(0x1f8);
-                                        else {
-                                            if (_0x5e79b0[_0x38fe3a(0x22b)] >= 0.8 && _0x5e79b0['level'] < 0.9)
-                                                document[_0x38fe3a(0x203)](_0x38fe3a(0x1fd))[_0x38fe3a(0x224)] = _0x38fe3a(0x210);
-                                            else
-                                                _0x5e79b0[_0x38fe3a(0x22b)] >= 0.9 && _0x5e79b0[_0x38fe3a(0x22b)] < 0x1 ? document[_0x38fe3a(0x203)]('battery')[_0x38fe3a(0x224)] = _0x38fe3a(0x1f5) : document[_0x38fe3a(0x203)](_0x38fe3a(0x1fd))[_0x38fe3a(0x224)] = _0x38fe3a(0x20c);
+
+        //显示电池格
+        function BetteryShow(perofb) {
+            if (perofb['level'] < 0.1) document['getElementById']('battery')['innerHTML'] = '\n <path d="M16,20H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                if (perofb['level'] >= 0.1 && perofb['level'] < 0.2) document['getElementById']('battery')['innerHTML'] = '\n <path d="M16,18H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                    if (perofb['level'] >= 0.2 && perofb['level'] < 0.3) document['getElementById']('battery')['innerHTML'] = '\n <path d="M16,18H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                        if (perofb['level'] >= 0.3 && perofb['level'] < 0.4) document['getElementById']('battery')['innerHTML'] = '\n <path d="M16,15H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                            if (perofb['level'] >= 0.4 && perofb['level'] < 0.5) document['getElementById']('battery')['innerHTML'] = '\n <path d="M16,14H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                                if (perofb['level'] >= 0.5 && perofb['level'] < 0.6) document['getElementById']('battery')['innerHTML'] = '\n <path d="M16,13H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                                    if (perofb['level'] >= 0.6 && perofb['level'] < 0.7) document['getElementById']('battery')['innerHTML'] = '\n <path d="M16,12H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                                        if (perofb['level'] >= 0.7 && perofb['level'] < 0.8) document['getElementById']('battery')['innerHTML'] = '\n <path d="M16,10H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                                            if (perofb['level'] >= 0.8 && perofb['level'] < 0.9) document['getElementById']('battery')['innerHTML'] = '\n <path d="M16,9H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />';
+                                            else perofb['level'] >= 0.9 && perofb['level'] < 1 ? document['getElementById']('battery')['innerHTML'] = '\n <path d="M16,8H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />' : document['getElementById']('battery')['innerHTML'] = '\n <path d="M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />';
                                         }
                                     }
                                 }
@@ -89,63 +64,38 @@ const modal = document[_0x4c2a59(0x21b)](_0x4c2a59(0x1f4))
                 }
             }
         }
-    }
-    , modalx = document[_0x4c2a59(0x203)](_0x4c2a59(0x219))
-    , modalClose = ()=>{
-        const _0x5b6447 = _0x4c2a59;
-        modalx['classList'][_0x5b6447(0x208)](_0x5b6447(0x225)),
-            modalx[_0x5b6447(0x22c)][_0x5b6447(0x207)](_0x5b6447(0x229)),
-            document[_0x5b6447(0x21b)]('body')[_0x5b6447(0x21a)][_0x5b6447(0x202)] = _0x5b6447(0x20e),
-            setTimeout(()=>{
-                    const _0x2ef8e4 = _0x5b6447;
-                    modalx[_0x2ef8e4(0x21a)]['display'] = _0x2ef8e4(0x220);
-                }
-                , 0x1f4);
-    }
-    , openModal = ()=>{
-        const _0xb9f927 = _0x4c2a59;
-        modalx[_0xb9f927(0x22c)]['remove']('fadeOut'),
-            modalx['classList']['add'](_0xb9f927(0x225)),
-            modalx[_0xb9f927(0x21a)]['display'] = _0xb9f927(0x204);
-    }
-;
-function _0x3584(_0x324916, _0x3c9a42) {
-    const _0x34831c = _0x3483();
-    return _0x3584 = function(_0x3584d5, _0x1d8cbf) {
-        _0x3584d5 = _0x3584d5 - 0x1f3;
-        let _0x47c785 = _0x34831c[_0x3584d5];
-        return _0x47c785;
-    }
-        ,
-        _0x3584(_0x324916, _0x3c9a42);
-}
-function _0x3483() {
-    const _0x1034ee = ['fadeOut', 'display', 'level', 'classList', 'matchMedia', 'theme=dark', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16,14H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>', 'matches', '11kAnjjJ', '.main-modal', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16,8H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16,13H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20body\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#d7e8ff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.preloader\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#ffffff\x20!important;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16,10H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>', 'dark', '1520282jWFGQY', 'toDateString', '(prefers-color-scheme:\x20dark)', 'battery', '262196edswYB', '2263444FWmxzV', '5yrTZac', '14858970jlXiTy', 'overflow', 'getElementById', 'flex', 'fa\x20fa-moon-o', 'date', 'add', 'remove', 'body', '291843oAPdvH', 'replace', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>', '699349RPtEoE', 'visible', 'hidden', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16,9H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>', 'percentage', '12RQaEQl', '873JBrtsQ', 'className', '2023', 'substring', '36408iNOwxA', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16,12H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>', 'donation', 'style', 'querySelector', 'darkic', 'div', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20*\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20rgb(255,\x20255,\x20255);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20body\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#181a1e;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.text-black\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20rgb(255,\x20255,\x20255);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.text-gray-800\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20rgb(255,\x20255,\x20255);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.text-gray-700\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20rgb(255,\x20255,\x20255);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.bg-white\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20black;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.bg-gray-300\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#181a1e;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.bg-blue-50\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#23262c;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.bg-blue-100\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#181a1e;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.text-gray-500\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#e0e0e0;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20em\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#1a73e8\x20!important;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20em:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#fff\x20!important;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#battery\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20#fff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#vector\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20#fff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20#search-d\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20rgb(0,\x200,\x200);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.preloader\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#000000\x20!important;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.heart\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20@keyframes\x20input-shadow\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x200%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.115);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2010%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.272);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2020%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.435);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2030%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.653);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2040%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.735);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2050%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgb(255,\x20255,\x20255);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2060%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.667);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2070%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.524);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2080%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.34);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20100%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x20rgba(255,\x20255,\x20255,\x200.177);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20@-webkit-keyframes\x20input-shadow\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x200%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.115);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2010%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.272);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2020%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.435);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2030%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.653);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2040%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.735);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2050%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgb(255,\x20255,\x20255);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2060%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.667);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2070%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.524);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2080%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20fill:\x20rgba(255,\x20255,\x20255,\x200.34);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20100%\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x20rgba(255,\x20255,\x20255,\x200.177);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}', 'hover:bg-gray-50', 'none', 'hover:bg-gray-900', 'cookie', 'time', 'innerHTML', 'fadeIn', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20d=\x22M16,15H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33\x200\x200,0\x206,5.33V20.67C6,21.4\x206.6,22\x207.33,22H16.67A1.33,1.33\x200\x200,0\x2018,20.67V5.33C18,4.6\x2017.4,4\x2016.67,4Z\x22\x20/>', 'active', 'fa\x20fa-sun-o'];
-    _0x3483 = function() {
-        return _0x1034ee;
-    }
-    ;
-    return _0x3483();
-}
-if (document[_0x4c2a59(0x222)] === _0x4c2a59(0x22e))
-    darkmode();
-else
-    document[_0x4c2a59(0x222)] === 'theme=white' ? whitemode() : window[_0x4c2a59(0x22d)](_0x4c2a59(0x1fc))[_0x4c2a59(0x230)] ? darkmode() : whitemode();
+    },
+    modalx = document['getElementById']('donation'),
+    closeModal = () => {
+        modalx['classList']['remove']('fadeIn'), modalx['classList']['add']('fadeOut'), document['querySelector']('body')['style']['overflow'] = 'visible', setTimeout(() => {
+            modalx['style']['display'] = 'none';
+        }, 500);
+    },
+    openModal = () => {
+        modalx['classList']['remove']('fadeOut'), modalx['classList']['add']('fadeIn'), modalx['style']['display'] = 'flex';
+    },
+    modaly = document['getElementById']('academy'),
+    closeAca = () => {
+        modaly['classList']['remove']('fadeIn'), modaly['classList']['add']('fadeOut'), document['querySelector']('body')['style']['overflow'] = 'visible', setTimeout(() => {
+            modaly['style']['display'] = 'none';
+        }, 500);
+    },
+    openAca = () => {
+        modaly['classList']['remove']('fadeOut'), modaly['classList']['add']('fadeIn'), modaly['style']['display'] = 'flex';
+    };
+//页面的主题颜色以及按钮变换
+if (document['cookie'] === 'theme=dark') darkmode(); else document['cookie'] === 'theme=white' ? whitemode() : window['matchMedia']('(prefers-color-scheme: dark)')['matches'] ? darkmode() : whitemode();
+
 function darkmode() {
-    const _0x11a54b = _0x4c2a59
-        , _0x1edc77 = document['querySelector'](_0x11a54b(0x21d));
-    _0x1edc77['classList'][_0x11a54b(0x20b)](_0x11a54b(0x21f), _0x11a54b(0x221)),
-        document[_0x11a54b(0x203)](_0x11a54b(0x21c))[_0x11a54b(0x214)] === _0x11a54b(0x205) ? (document['getElementById'](_0x11a54b(0x21c))[_0x11a54b(0x214)] = _0x11a54b(0x228),
-            document[_0x11a54b(0x222)] = _0x11a54b(0x22e),
-            document[_0x11a54b(0x203)](_0x11a54b(0x1f9))[_0x11a54b(0x224)] = _0x11a54b(0x21e)) : whitemode();
+    const _0x1edc77 = document['querySelector']('div');
+    _0x1edc77['classList']['replace']('hover:bg-gray-50', 'hover:bg-gray-900'), document['getElementById']('darkic')['className'] === 'fa-shake fa-regular fa-moon' ? (document['getElementById']('darkic')['className'] = 'fa-spin fa-regular fa-sun', document['cookie'] = 'theme=dark', document['getElementById']('dark')['innerHTML'] = '\n * {\n color: rgb(255, 255, 255);\n }\n\n body {\n background-color: #181a1e;\n }\n\n .text-black {\n color: rgb(255, 255, 255);\n }\n\n .text-gray-800 {\n color: rgb(255, 255, 255);\n }\n\n .text-gray-700 {\n color: rgb(255, 255, 255);\n }\n\n .bg-white {\n background-color: black;\n }\n\n .bg-gray-300 {\n background-color: #181a1e;\n }\n\n .bg-blue-50 {\n background-color: #23262c;\n }\n\n .bg-blue-100 {\n background-color: #181a1e;\n }\n\n .text-gray-500 {\n color: #e0e0e0;\n }\n\n em {\n color: #1a73e8 !important;\n }\n\n em:hover {\n color: #fff !important;\n }\n\n #battery {\n fill: #fff;\n }\n\n #vector {\n fill: #fff;\n }\n\n #search-d {\n background-color: rgb(0, 0, 0);\n }\n\n .preloader {\n background: #000000 !important;\n }\n\n .heart {\n fill: #ffffff;\n }\n\n @keyframes input-shadow {\n 0% {\n fill: rgba(255, 255, 255, 0.115);\n }\n 10% {\n fill: rgba(255, 255, 255, 0.272);\n }\n 20% {\n fill: rgba(255, 255, 255, 0.435);\n }\n 30% {\n fill: rgba(255, 255, 255, 0.653);\n }\n 40% {\n fill: rgba(255, 255, 255, 0.735);\n }\n 50% {\n fill: rgb(255, 255, 255);\n }\n 60% {\n fill: rgba(255, 255, 255, 0.667);\n }\n 70% {\n fill: rgba(255, 255, 255, 0.524);\n }\n 80% {\n fill: rgba(255, 255, 255, 0.34);\n }\n 100% {\n box-shadow: rgba(255, 255, 255, 0.177);\n }\n }\n\n @-webkit-keyframes input-shadow {\n 0% {\n fill: rgba(255, 255, 255, 0.115);\n }\n 10% {\n fill: rgba(255, 255, 255, 0.272);\n }\n 20% {\n fill: rgba(255, 255, 255, 0.435);\n }\n 30% {\n fill: rgba(255, 255, 255, 0.653);\n }\n 40% {\n fill: rgba(255, 255, 255, 0.735);\n }\n 50% {\n fill: rgb(255, 255, 255);\n }\n 60% {\n fill: rgba(255, 255, 255, 0.667);\n }\n 70% {\n fill: rgba(255, 255, 255, 0.524);\n }\n 80% {\n fill: rgba(255, 255, 255, 0.34);\n }\n 100% {\n box-shadow: rgba(255, 255, 255, 0.177);\n }\n}') : whitemode();
 }
+
 try {
-    document['querySelector']('.workspace')[_0x4c2a59(0x22c)][_0x4c2a59(0x207)](_0x4c2a59(0x227));
-} catch (_0x2cf5f5) {}
+    document['querySelector']('.workspace')['classList']['add']('active');
+} catch (_0x2cf5f5) {
+}
+
 function whitemode() {
-    const _0x546537 = _0x4c2a59;
-    document[_0x546537(0x203)](_0x546537(0x1f9))[_0x546537(0x224)] = '',
-        document[_0x546537(0x203)](_0x546537(0x21c))[_0x546537(0x214)] = _0x546537(0x205),
-        document['cookie'] = 'theme=white',
-        document['getElementById'](_0x546537(0x1f9))[_0x546537(0x224)] = _0x546537(0x1f7);
+    document['getElementById']('dark')['innerHTML'] = '', document['getElementById']('darkic')['className'] = 'fa-shake fa-regular fa-moon', document['cookie'] = 'theme=white', document['getElementById']('dark')['innerHTML'] = '\n body {\n background-color: #d7e8ff;\n }\n\n .preloader {\n background: #ffffff !important;\n }';
 }
