@@ -1,27 +1,27 @@
 * {
     outline: 0 !important;
     text-decoration: none;
-    font-family: google-sans, sans-serif
+    font-family: google-sans, "Arial Narrow";
 }
 
 @font-face {
     font-family: google-sans;
-    src: url(data:static/font/GoogleSans-Regular.ttf) format('truetype');
+    src: url(/static/font/GoogleSans-Regular.ttf);
     font-weight: 400
 }
 
 @font-face {
     font-family: google-sans-medium;
-    src: url(data:static/font/GoogleSans-Medium.ttf) format('truetype');
-    font-weight: medium
+    src: url(/static/font/GoogleSans-Medium.ttf);
+    font-weight: 500
 }
 
 .font-regular {
-    font-family: google-sans
+    font-family: google-sans,"Arial Narrow";
 }
 
 .font-medium {
-    font-family: google-sans-medium
+    font-family: google-sans-medium,"Arial Narrow";
 }
 
 body {
@@ -30,7 +30,7 @@ body {
 
 body, html {
     margin: 0;
-    font-family: google-sans;
+    font-family: google-sans,"Arial Narrow";
     height: auto;
     overflow-x: hidden
 }
