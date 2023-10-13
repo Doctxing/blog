@@ -6,13 +6,13 @@
 
 @font-face {
     font-family: google-sans;
-    src: url(/static/font/GoogleSans-Regular.ttf);
+    src: url(/static/webfonts/GoogleSans-Regular.ttf);
     font-weight: 400
 }
 
 @font-face {
     font-family: google-sans-medium;
-    src: url(/static/font/GoogleSans-Medium.ttf);
+    src: url(/static/webfonts/GoogleSans-Medium.ttf);
     font-weight: 500
 }
 
@@ -58,7 +58,7 @@ body, html {
 
 .filled-btn {
     font-size: 14px;
-    font-family: google-sans-medium;
+    font-family: google-sans-medium,"Arial Narrow";
     background: #1a73e8;
     color: #fff;
     border-radius: 99px
@@ -83,15 +83,15 @@ body, html {
     overflow: hidden
 }
 
-.team-border {
+.thankswall-border {
     border-left: 4px solid #132845
 }
 
-.team-member {
+.thankswall-member {
     min-width: 380px
 }
 
-.team-member img {
+.thankswall-member img {
     max-width: none
 }
 

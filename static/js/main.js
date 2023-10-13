@@ -1,6 +1,38 @@
 //coded by Doctxing
+
+//页面的主题颜色以及按钮变换
+if (document['cookie'] === 'theme=dark') darkmode(); else document['cookie'] === 'theme=white' ? whitemode() : window['matchMedia']('(prefers-color-scheme: dark)')['matches'] ? darkmode() : whitemode();
+
+function darkmode() {
+    const color = document['querySelector']('div');
+    color['classList']['replace']('hover:bg-gray-50', 'hover:bg-gray-900'), document['getElementById']('darktheme')['className'] === 'fa-shake fa-regular fa-moon' ? (document['getElementById']('darktheme')['className'] = 'fa-spin fa-regular fa-sun', document['cookie'] = 'theme=dark', document['getElementById']('dark')['innerHTML'] = '\n * {\n color: rgb(255, 255, 255);\n }\n\n body {\n background-color: #181a1e;\n }\n\n .text-black {\n color: rgb(255, 255, 255);\n }\n\n .text-gray-800 {\n color: rgb(255, 255, 255);\n }\n\n .text-gray-700 {\n color: rgb(255, 255, 255);\n }\n\n .bg-white {\n background-color: black;\n }\n\n .bg-gray-300 {\n background-color: #181a1e;\n }\n\n .bg-blue-50 {\n background-color: #23262c;\n }\n\n .bg-blue-100 {\n background-color: #181a1e;\n }\n\n .text-gray-500 {\n color: #e0e0e0;\n }\n\n em {\n color: #1a73e8 !important;\n }\n\n em:hover {\n color: #fff !important;\n }\n\n #battery {\n fill: #fff;\n }\n\n #vector {\n fill: #fff;\n }\n\n #search-d {\n background-color: rgb(0, 0, 0);\n }\n\n .preloader {\n background: #000000 !important;\n }\n\n .heart {\n fill: #ffffff;\n }\n\n @keyframes input-shadow {\n 0% {\n fill: rgba(255, 255, 255, 0.115);\n }\n 10% {\n fill: rgba(255, 255, 255, 0.272);\n }\n 20% {\n fill: rgba(255, 255, 255, 0.435);\n }\n 30% {\n fill: rgba(255, 255, 255, 0.653);\n }\n 40% {\n fill: rgba(255, 255, 255, 0.735);\n }\n 50% {\n fill: rgb(255, 255, 255);\n }\n 60% {\n fill: rgba(255, 255, 255, 0.667);\n }\n 70% {\n fill: rgba(255, 255, 255, 0.524);\n }\n 80% {\n fill: rgba(255, 255, 255, 0.34);\n }\n 100% {\n box-shadow: rgba(255, 255, 255, 0.177);\n }\n }\n\n @-webkit-keyframes input-shadow {\n 0% {\n fill: rgba(255, 255, 255, 0.115);\n }\n 10% {\n fill: rgba(255, 255, 255, 0.272);\n }\n 20% {\n fill: rgba(255, 255, 255, 0.435);\n }\n 30% {\n fill: rgba(255, 255, 255, 0.653);\n }\n 40% {\n fill: rgba(255, 255, 255, 0.735);\n }\n 50% {\n fill: rgb(255, 255, 255);\n }\n 60% {\n fill: rgba(255, 255, 255, 0.667);\n }\n 70% {\n fill: rgba(255, 255, 255, 0.524);\n }\n 80% {\n fill: rgba(255, 255, 255, 0.34);\n }\n 100% {\n box-shadow: rgba(255, 255, 255, 0.177);\n }\n}') : whitemode();
+}
+
+try {
+    document['querySelector']('.workspace')['classList']['add']('active');
+} catch (gotobin) {
+}
+
+function whitemode() {
+    document['getElementById']('dark')['innerHTML'] = '', document['getElementById']('darktheme')['className'] = 'fa-shake fa-regular fa-moon', document['cookie'] = 'theme=white', document['getElementById']('dark')['innerHTML'] = '\n body {\n background-color: #d7e8ff;\n }\n\n .preloader {\n background: #ffffff !important;\n }';
+}
+
+//safe
+function isInclude(name){
+    var js= /js$/i.test(name);
+    var es=document.getElementsByTagName(js?'script':'link');
+    for(var i=0;i<es.length;i++)
+        if(es[i][js?'src':'href'].indexOf(name)!==-1)
+            return true;
+    return false;
+}
+if (isInclude("all.min.css")===false) {
+    var position = document.getElementById('fontAwesomeCss');
+    position.href="static/css/all.min.css";
+}
+
 //go back to the top 按钮
-var mybutton = document['getElementById']('back-to-top');
+const mybutton = document['getElementById']('back-to-top');
 
 window['onscroll'] = function () {
     scrollFunction();
@@ -14,6 +46,7 @@ function topFunction() {
     document['body']['scrollTop'] = 0, document['documentElement']['scrollTop'] = 0;
 }
 
+//一些栏
 const modal = document['querySelector']('.main-modal'),
     closeNav = () => {
         modal['classList']['remove']('fadeIn'), modal['classList']['add']('fadeOut'), document['querySelector']('body')['style']['overflow'] = 'visible', setTimeout(() => {
@@ -83,19 +116,4 @@ const modal = document['querySelector']('.main-modal'),
     openAca = () => {
         modaly['classList']['remove']('fadeOut'), modaly['classList']['add']('fadeIn'), modaly['style']['display'] = 'flex';
     };
-//页面的主题颜色以及按钮变换
-if (document['cookie'] === 'theme=dark') darkmode(); else document['cookie'] === 'theme=white' ? whitemode() : window['matchMedia']('(prefers-color-scheme: dark)')['matches'] ? darkmode() : whitemode();
 
-function darkmode() {
-    const _0x1edc77 = document['querySelector']('div');
-    _0x1edc77['classList']['replace']('hover:bg-gray-50', 'hover:bg-gray-900'), document['getElementById']('darkic')['className'] === 'fa-shake fa-regular fa-moon' ? (document['getElementById']('darkic')['className'] = 'fa-spin fa-regular fa-sun', document['cookie'] = 'theme=dark', document['getElementById']('dark')['innerHTML'] = '\n * {\n color: rgb(255, 255, 255);\n }\n\n body {\n background-color: #181a1e;\n }\n\n .text-black {\n color: rgb(255, 255, 255);\n }\n\n .text-gray-800 {\n color: rgb(255, 255, 255);\n }\n\n .text-gray-700 {\n color: rgb(255, 255, 255);\n }\n\n .bg-white {\n background-color: black;\n }\n\n .bg-gray-300 {\n background-color: #181a1e;\n }\n\n .bg-blue-50 {\n background-color: #23262c;\n }\n\n .bg-blue-100 {\n background-color: #181a1e;\n }\n\n .text-gray-500 {\n color: #e0e0e0;\n }\n\n em {\n color: #1a73e8 !important;\n }\n\n em:hover {\n color: #fff !important;\n }\n\n #battery {\n fill: #fff;\n }\n\n #vector {\n fill: #fff;\n }\n\n #search-d {\n background-color: rgb(0, 0, 0);\n }\n\n .preloader {\n background: #000000 !important;\n }\n\n .heart {\n fill: #ffffff;\n }\n\n @keyframes input-shadow {\n 0% {\n fill: rgba(255, 255, 255, 0.115);\n }\n 10% {\n fill: rgba(255, 255, 255, 0.272);\n }\n 20% {\n fill: rgba(255, 255, 255, 0.435);\n }\n 30% {\n fill: rgba(255, 255, 255, 0.653);\n }\n 40% {\n fill: rgba(255, 255, 255, 0.735);\n }\n 50% {\n fill: rgb(255, 255, 255);\n }\n 60% {\n fill: rgba(255, 255, 255, 0.667);\n }\n 70% {\n fill: rgba(255, 255, 255, 0.524);\n }\n 80% {\n fill: rgba(255, 255, 255, 0.34);\n }\n 100% {\n box-shadow: rgba(255, 255, 255, 0.177);\n }\n }\n\n @-webkit-keyframes input-shadow {\n 0% {\n fill: rgba(255, 255, 255, 0.115);\n }\n 10% {\n fill: rgba(255, 255, 255, 0.272);\n }\n 20% {\n fill: rgba(255, 255, 255, 0.435);\n }\n 30% {\n fill: rgba(255, 255, 255, 0.653);\n }\n 40% {\n fill: rgba(255, 255, 255, 0.735);\n }\n 50% {\n fill: rgb(255, 255, 255);\n }\n 60% {\n fill: rgba(255, 255, 255, 0.667);\n }\n 70% {\n fill: rgba(255, 255, 255, 0.524);\n }\n 80% {\n fill: rgba(255, 255, 255, 0.34);\n }\n 100% {\n box-shadow: rgba(255, 255, 255, 0.177);\n }\n}') : whitemode();
-}
-
-try {
-    document['querySelector']('.workspace')['classList']['add']('active');
-} catch (_0x2cf5f5) {
-}
-
-function whitemode() {
-    document['getElementById']('dark')['innerHTML'] = '', document['getElementById']('darkic')['className'] = 'fa-shake fa-regular fa-moon', document['cookie'] = 'theme=white', document['getElementById']('dark')['innerHTML'] = '\n body {\n background-color: #d7e8ff;\n }\n\n .preloader {\n background: #ffffff !important;\n }';
-}

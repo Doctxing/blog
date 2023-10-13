@@ -1,7 +1,7 @@
 # Doctxing的博客副页🫠
 
-[![license](static/license/license_gitee.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
-[![license](static/license/license_github.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
+[![license](static/image/svgs/license_gitee.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
+[![license](static/image/svgs/license_github.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
 
 ![こくしぼう](static/image/uppage.png)
 
