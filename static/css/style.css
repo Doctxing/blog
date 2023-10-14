@@ -6,13 +6,13 @@
 
 @font-face {
     font-family: google-sans;
-    src: url(/static/webfonts/GoogleSans-Regular.ttf);
+    src: url(../webfonts/GoogleSans-Regular.ttf);
     font-weight: 400
 }
 
 @font-face {
     font-family: google-sans-medium;
-    src: url(/static/webfonts/GoogleSans-Medium.ttf);
+    src: url(../webfonts/GoogleSans-Medium.ttf);
     font-weight: 500
 }
 
