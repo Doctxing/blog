@@ -1,9 +1,9 @@
 # Doctxing的博客副页🫠
 
-[![license](static/image/svgs/license_gitee.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
-[![license](static/image/svgs/license_github.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
+[![license](image/svgs/license_gitee.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
+[![license](image/svgs/license_github.svg)](https://gitee.com/Doctxing/Doctxing/blob/master/LICENSE)
 
-![こくしぼう](static/image/uppage.png)
+![こくしぼう](image/uppage.png)
 
 > 弱者没有权利，无从选择。
 > 

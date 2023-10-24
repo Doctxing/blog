@@ -1,7 +1,7 @@
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-// also extraced by Doctxing
+// also extracted by Doctxing
 
 /**
  * T-Rex runner.
@@ -239,7 +239,7 @@ Runner.keycodes = {
     DUCK: {'40': 1},           // Down
     RESTART: {'13': 1},        // Enter
 };
-
+// todo::
 
 /**
  * Runner event names.

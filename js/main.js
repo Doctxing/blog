@@ -28,7 +28,7 @@ function isInclude(name){
 }
 if (isInclude("all.min.css")===false) {
     var position = document.getElementById('fontAwesomeCss');
-    position.href="static/css/all.min.css";
+    position.href="css/all.min.css";
 }
 
 //go back to the top 按钮

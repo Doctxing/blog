@@ -1,7 +1,7 @@
 /* Copyright 2013 The Chromium Authors
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file.
- * also extraced by Doctxing */
+ * also extracted by Doctxing */
 
     /* Don't use the main frame div when the error is in a subframe. */
 html[subframe] #main-frame-error {
@@ -609,7 +609,7 @@ html[subframe] body {
 }
 
 /* If the iframe is too small, always hide the error code. */
-/* TODO(mmenke): See if overflow: no-display works better, once supported. */
+/* todo: See if overflow: no-display works better, once supported. */
 @media (max-width: 200px), (max-height: 95px) {
     #sub-frame-error-details {
         display: none;
