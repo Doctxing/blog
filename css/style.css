@@ -64,14 +64,21 @@ body, html {
     border-radius: 99px
 }
 
-#features-card {
+#functions-card{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center
 }
 
-#thankwall-grid {
+#functions-hit-card{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center
+}
+
+#thankswall-grid {
     grid-template-areas:
             "a b"
             "c d"
@@ -96,7 +103,7 @@ body, html {
 }
 
 @media only screen and (max-width: 1072px) {
-    #thankwall-grid {
+    #thankswall-grid {
         grid-template-areas:"a " "b ""c ""d "
     }
 }
