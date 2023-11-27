@@ -18,6 +18,7 @@ function whitemode() {
 }
 
 //safe
+/*
 function isInclude(name){
     var js= /js$/i.test(name);
     var es=document.getElementsByTagName(js?'script':'link');
@@ -30,6 +31,7 @@ if (isInclude("all.min.css")===false) {
     var position = document.getElementById('fontAwesomeCss');
     position.href="css/all.min.css";
 }
+*/
 
 //go back to the top 按钮
 const mybutton = document['getElementById']('back-to-top');

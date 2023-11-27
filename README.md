@@ -142,9 +142,6 @@
 │   ├── Drivers
 │   └── backup.pmfx
 ├── downloads
-│   ├── Your.Name.2016.DUBBED.1080p.BluRay.x265-RARBG
-│   ├── google-chrome-stable_current_amd64.deb
-│   ├── zh-cn_windows_11_consumer_editions_version_22h2_updated_oct_2023_x64_dvd_0f09f40a.iso
 │   ├── 云盘缓存文件
 │   └── 迅雷小插件数据
 ├── exp
@@ -224,8 +221,7 @@
 │   ├── tht13.html-preview-vscode-0.2.5.vsix
 │   ├── windowsdesktop-runtime-6.0.18-win-x64.exe
 │   ├── windowsdesktop-runtime-6.0.18-win-x86.exe
-│   ├── wsl_update_x64.msi
-│   └── 数字激活.pdf
+│   └── wsl_update_x64.msi
 ├── things-to-remember
 │   ├── picture
 │   ├── qiqiqiaqia.mp4
@@ -256,7 +252,6 @@
 │   ├── Payload
 │   ├── Snapshot-exetool
 │   └── mkvtool
-├── tree.txt
 ├── videos_movies
 │   ├── A.Beautiful.Mind.2001.1080p.BluRay.x265
 │   ├── Airota.Tenki.No.Ko.movie.BDRip.1080p.HEVC-10bit.FLAC
