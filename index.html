@@ -8,13 +8,15 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>DoctxingのBlog</title>
-    <link href="image/avartar.png" rel="icon">
+    <link href="./image/avartar.png" rel="icon">
     <!-- Tailwind Css-->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="./css/style.css" rel="stylesheet">
+    <!-- Test  -->
+    
     <style>
         html {
             scroll-behavior: smooth;
@@ -118,7 +120,7 @@
         <div class="modal-content px-6 py-4 text-left">
             <div class="flex justify-between items-center pb-4">
                 <span class="text-3xl font-medium">&ensp;感谢大家支持&ensp;<i class="fa-regular fa-heart fa-bounce" style="color: currentColor;"></i></span>
-                <div class="modal-close cursor-pointer z-50 py-2"  onclick="closeModal();">
+                <div class="modal-close cursor-pointer z-50 py-2"  onclick="closeModal(modalx);">
                     <em aria-hidden="true" class="footer-btn w-10 h-10 center justify-center">
                         <svg class="fill-current text-black" height="24" viewbox="0 0 18 18" width="24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
@@ -176,7 +178,7 @@
                 <div class="flex justify-items-end relative">
                     <div class="flex items-end mr-2 md:mr-0">
                         <div class="block relative">
-                            <button class="max-[410px]:hidden navbar-btn h-14 items-center inline-block shadow-xl bg-white px-4 py-3.5 hover:bg-blue-300 rounded-3xl relative mr-1"  onclick="openModal()" type="button">
+                            <button class="max-[410px]:hidden navbar-btn h-14 items-center inline-block shadow-xl bg-white px-4 py-3.5 hover:bg-blue-300 rounded-3xl relative mr-1"  onclick="openModal(modalx)" type="button">
                                 <em class="h-4 fa-solid fa-yen-sign" style="font-size:1em; color: rgb(0, 0, 0);"></em>
                                 <span class="font-medium ml-0.5">Support</span>
                             </button>
@@ -210,7 +212,7 @@
         <div class="modal-content px-6 py-4 text-left">
             <div class="flex justify-between items-center pb-4">
                 <span class="text-3xl font-medium">Acadamy</span>
-                <div class="modal-close cursor-pointer z-50 py-2"  onclick="closeAca();">
+                <div class="modal-close cursor-pointer z-50 py-2"  onclick="closeModal(modaly);">
                     <em aria-hidden="true" class="footer-btn w-10 h-10 center justify-center">
                         <svg class="fill-current text-black" height="24" viewbox="0 0 18 18" width="24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
@@ -258,7 +260,7 @@
 <!-- Content -->
 <section id="content">
     <div class="min-h-screen flex items-center justify-center px-4 mt-4 mb-8">
-        <div class="max-w-5xl p-10 bg-white w-full material-card">
+        <div class="max-w-6xl p-10 bg-white w-full material-card">
             <div class="mb-6 lg:mb-10 flex items-center">
                 <img class="avatar max-[410px]:h-12 max-[410px]:w-12 " height="80" src="./image/avartar.jpg" width="80" alt="avartar">
                 <span class="font-medium text-6xl pl-5 max-[410px]:text-4xl max-sm:pl-3 max-[410px]:pl-2 ">Doctxing</span>
@@ -322,7 +324,7 @@
 <!-- Passage -->
 <section id="passage">
     <div class="flex items-center justify-center px-4 mt-4 mb-8">
-        <div class="max-w-5xl p-10 bg-white w-full material-card">
+        <div class="max-w-6xl p-10 bg-white w-full material-card">
             <div class="text-center">
                 <span class="font-medium text-6xl max-[1000px]:text-4xl  md:pl-5">报我风雨晦暗，我亦高昂头颅</span></div>
             <br>
@@ -345,7 +347,7 @@
 <!-- Video -->
 <section id="video">
     <div class="flex items-center justify-center px-4 mt-4 mb-8">
-        <div class="max-w-5xl p-10 bg-white w-full material-card">
+        <div class="max-w-6xl p-10 bg-white w-full material-card">
             <div class="text-center">
                 <span class="font-medium text-6xl max-[410px]:text-4xl md:pl-5">Salute!!!</span></div>
             <br>
@@ -364,7 +366,7 @@
     <div class="flex justify-center text-center font-medium text-5xl max-[410px]:text-4xl my-8">Functions</div>
     <div class="flex items-center justify-center">
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4" id="functions-card">
-            <div onclick="openAca()">
+            <div onclick="openModal(modaly)">
                 <div class="relative bg-white p-6 material-card w-72 h-42 mx-2 my-4">
                     <div class=" flex items-center absolute rounded-3xl py-3 px-3 h-16 w-16 bg-blue-50 left-4 -top-6">
                         <i style="font-size: 2.0rem;color: #1a73e8" class="fa-solid fa-graduation-cap justify-center"></i></div>
@@ -510,7 +512,7 @@
 <section class="pt-10" id="connect">
     <div class="flex justify-center text-center font-medium text-5xl max-[410px]:text-4xl my-8">Connect me</div>
     <div class="flex items-center justify-center px-4 mt-4 mb-8">
-        <div class="p-10 bg-white material-card ">
+        <div class="max-w-6xl p-10 bg-white material-card ">
             <div class="container text-center">
                 <h2>我的联系方式！！</h2>
                 <br>
@@ -519,7 +521,7 @@
                     <br>
                     <p>QQ:2792280337</p>
                     <br>
-                    <img class="flex items-center" src="image/wechat-qq.png" alt="connect">
+                    <img class="flex items-center" src="./image/wechat-qq.png" alt="connect" >
                     <br>
                 </div>
                 <br>
@@ -546,16 +548,16 @@
     <footer class="bg-white w-screen">
         <div class="flex flex-col flex-wrap py-6 mx-auto md:items-center md:flex-row">
             <div class="inline-flex items-center justify-start">
-                <a class="ml-8 focus:outline-none" href="trick.html">
+                <a class="ml-8 focus:outline-none" href="./trick.html">
                     <div class="w-2 h-2 p-2 mr-2 rounded-full" style="background: #1a73e8;"></div>
                 </a>
-                <a class="mr-8 focus:outline-none" href="index.html">
+                <a class="mr-8 focus:outline-none" href="./index.html">
                     <h2 class="block p-2 text-xl font-medium tracking-tighter text-black transition duration-500 ease-in-out cursor-pointer hover:text-slate-500 lg:text-x">Doctxing</h2>
                 </a>
             </div>
             <span class="inline-flex flex flex-wrap mx-8 my-4 text-gray-500 justify-start">
-                <a href="changelog.html" style="padding-right: 15px;">Changelog</a>
-                <a href="egg.html" class="fa-fade" style="padding-left: 15px; padding-right: 15px">Do Not Click Me</a>
+                <a href="./changelog.html" style="padding-right: 15px;">Changelog</a>
+                <a href="./egg.html" class="fa-fade" style="padding-left: 15px; padding-right: 15px">Do Not Click Me</a>
             </span>
             <!-- Logos -->
             <span class="inline-flex flex flex-wrap mr-8 md:mr-24 ml-8 sm:ml-auto">
@@ -605,5 +607,9 @@
 
 
 <!-- Scripts -->
-<script src="js/main.js" type="text/javascript"></script>
+<script src="./js/main.js" type="text/javascript"></script>
+<script type="text/javascript">
+    hititle.style.display='none'
+    hisub.style.display='none';
+</script>
 </html>
