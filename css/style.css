@@ -25,7 +25,8 @@
 }
 
 body {
-    background-color: #d7e8ff
+    background-color: #d7e8ff;
+    transition: background-color 0.5s;
 }
 
 body, html {
@@ -61,6 +62,7 @@ body, html {
     font-family: google-sans-medium,"Arial Narrow";
     background: #1a73e8;
     color: #fff;
+    transition: color 0.5s,background-color 0.5s;
     border-radius: 99px
 }
 
@@ -123,13 +125,15 @@ body, html {
 .footer-btn {
     color: #1a73e8;
     line-height: 7vh;
-    margin-bottom: 0
+    margin-bottom: 0;
+    transition: color 0.5s;
 }
 
 .footer-btn:hover {
     color: #fff;
     background: #1a73e8;
-    border-radius: 12px
+    border-radius: 12px;
+    transition: color 0.5s;
 }
 
 #back-to-top {
@@ -143,12 +147,15 @@ body, html {
 }
 
 .nav-tile {
-    background-color: #1a73e8
+    background-color: #1a73e8;
+    transition: background-color 0.5s;
 }
 
 .hover\:bg-blue-300:hover, .hover\:bg-blue-300:hover em {
     background-color: #1a73e8 !important;
-    color: #fff !important
+    color: #fff !important;
+    transition: color 0.5s,background-color 0.5s;
+
 }
 
 #back-to-top:hover svg, .navbar-btn:hover svg, .footer-btn:hover svg {

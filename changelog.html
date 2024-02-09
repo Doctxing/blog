@@ -14,7 +14,10 @@
     <!-- Font Awesome -->
     <link href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <!-- gitalk  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -49,49 +52,42 @@
                 </div>
             </div>
             <div class="grid h-16 grid-flow-row grid-cols-2 mx-8">
-                <a class="nav-tile flex flex-col justify-center px-2 py-2 m-1 rounded-full" href="./academic/mathematics/mathematics.html" onclick="closeNav();">
+                <a class="nav-tile flex flex-col justify-center px-2 py-2 m-1 rounded-full" href="./academic/index.html" onclick="closeNav();">
                     <div class="flex px-2">
-                        <svg fill="#ffffff" height="24" viewBox="0 0 16 16" width="24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="25">
+                            <path fill="#ffffff" d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/>
                         </svg>
-                        <span class="text-md text-white font-medium pl-2">Mathematics</span>
+                        <span class="text-md text-white font-medium pl-2">Academic</span>
                     </div>
                 </a>
-                <a class="nav-tile flex flex-col justify-center px-2 py-2 m-1 rounded-full" href="./academic/biology.html" onclick="closeNav();">
+                <a class="nav-tile flex flex-col justify-center px-2 py-2 m-1 rounded-full" onclick="window.open('./changelog.html')">
                     <div class="flex px-2">
-                        <svg class="fa-shake" fill="#ffffff" height="24" viewBox="0 0 16 16"
-                             width="24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 0a1 1 0 0 1 1 1v1.402c0 .511.677.693.933.25l.7-1.214a1 1 0 0 1 1.733 1l-.701 1.214c-.256.443.24.939.683.683l1.214-.701a1 1 0 0 1 1 1.732l-1.214.701c-.443.256-.262.933.25.933H15a1 1 0 1 1 0 2h-1.402c-.512 0-.693.677-.25.933l1.214.701a1 1 0 1 1-1 1.732l-1.214-.7c-.443-.257-.939.24-.683.682l.701 1.214a1 1 0 1 1-1.732 1l-.701-1.214c-.256-.443-.933-.262-.933.25V15a1 1 0 1 1-2 0v-1.402c0-.512-.677-.693-.933-.25l-.701 1.214a1 1 0 0 1-1.732-1l.7-1.214c.257-.443-.24-.939-.682-.683l-1.214.701a1 1 0 1 1-1-1.732l1.214-.701c.443-.256.261-.933-.25-.933H1a1 1 0 1 1 0-2h1.402c.511 0 .693-.677.25-.933l-1.214-.701a1 1 0 1 1 1-1.732l1.214.701c.443.256.939-.24.683-.683l-.701-1.214a1 1 0 0 1 1.732-1l.701 1.214c.256.443.933.261.933-.25V1a1 1 0 0 1 1-1Zm2 5a1 1 0 1 0-2 0 1 1 0 0 0 2 0ZM6 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm1 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm5-3a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"/>
-                        </svg>
-                        <span class="text-md text-white font-medium pl-2">Biology</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="25">
+                            <path fill="#ffffff" d="M208 352c114.9 0 208-78.8 208-176S322.9 0 208 0S0 78.8 0 176c0 38.6 14.7 74.3 39.6 103.4c-3.5 9.4-8.7 17.7-14.2 24.7c-4.8 6.2-9.7 11-13.3 14.3c-1.8 1.6-3.3 2.9-4.3 3.7c-.5 .4-.9 .7-1.1 .8l-.2 .2 0 0 0 0C1 327.2-1.4 334.4 .8 340.9S9.1 352 16 352c21.8 0 43.8-5.6 62.1-12.5c9.2-3.5 17.8-7.4 25.3-11.4C134.1 343.3 169.8 352 208 352zM448 176c0 112.3-99.1 196.9-216.5 207C255.8 457.4 336.4 512 432 512c38.2 0 73.9-8.7 104.7-23.9c7.5 4 16 7.9 25.2 11.4c18.3 6.9 40.3 12.5 62.1 12.5c6.9 0 13.1-4.5 15.2-11.1c2.1-6.6-.2-13.8-5.8-17.9l0 0 0 0-.2-.2c-.2-.2-.6-.4-1.1-.8c-1-.8-2.5-2-4.3-3.7c-3.6-3.3-8.5-8.1-13.3-14.3c-5.5-7-10.7-15.4-14.2-24.7c24.9-29 39.6-64.7 39.6-103.4c0-92.8-84.9-168.9-192.6-175.5c.4 5.1 .6 10.3 .6 15.5z"/></svg>
+                        <span class="text-md text-white font-medium pl-2">Communicate</span>
                     </div>
                 </a>
             </div>
             <div class="grid h-16 grid-flow-row grid-cols-2 mx-8">
-                <a class="nav-tile flex flex-col justify-center px-2 py-2 m-1 rounded-full" href="./academic/physics.html" onclick="closeNav();">
+                <a class="nav-tile flex flex-col justify-center px-2 py-2 m-1 rounded-full" href="" onclick="closeNav();">
                     <div class="flex px-2">
-                        <svg class="fa-spin" fill="#ffffff" height="24" viewBox="0 0 16 16"
-                             width="24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Z"/>
-                            <path d="M9.653 5.496A2.986 2.986 0 0 0 8 5c-.61 0-1.179.183-1.653.496L4.694 2.992A5.972 5.972 0 0 1 8 2c1.222 0 2.358.365 3.306.992L9.653 5.496Zm1.342 2.324a2.986 2.986 0 0 1-.884 2.312 3.01 3.01 0 0 1-.769.552l1.342 2.683c.57-.286 1.09-.66 1.538-1.103a5.986 5.986 0 0 0 1.767-4.624l-2.994.18Zm-5.679 5.548 1.342-2.684A3 3 0 0 1 5.005 7.82l-2.994-.18a6 6 0 0 0 3.306 5.728ZM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="25">
+                            <path fill="#ffffff" d="M308.5 135.3c7.1-6.3 9.9-16.2 6.2-25c-2.3-5.3-4.8-10.5-7.6-15.5L304 89.4c-3-5-6.3-9.9-9.8-14.6c-5.7-7.6-15.7-10.1-24.7-7.1l-28.2 9.3c-10.7-8.8-23-16-36.2-20.9L199 27.1c-1.9-9.3-9.1-16.7-18.5-17.8C173.9 8.4 167.2 8 160.4 8h-.7c-6.8 0-13.5 .4-20.1 1.2c-9.4 1.1-16.6 8.6-18.5 17.8L115 56.1c-13.3 5-25.5 12.1-36.2 20.9L50.5 67.8c-9-3-19-.5-24.7 7.1c-3.5 4.7-6.8 9.6-9.9 14.6l-3 5.3c-2.8 5-5.3 10.2-7.6 15.6c-3.7 8.7-.9 18.6 6.2 25l22.2 19.8C32.6 161.9 32 168.9 32 176s.6 14.1 1.7 20.9L11.5 216.7c-7.1 6.3-9.9 16.2-6.2 25c2.3 5.3 4.8 10.5 7.6 15.6l3 5.2c3 5.1 6.3 9.9 9.9 14.6c5.7 7.6 15.7 10.1 24.7 7.1l28.2-9.3c10.7 8.8 23 16 36.2 20.9l6.1 29.1c1.9 9.3 9.1 16.7 18.5 17.8c6.7 .8 13.5 1.2 20.4 1.2s13.7-.4 20.4-1.2c9.4-1.1 16.6-8.6 18.5-17.8l6.1-29.1c13.3-5 25.5-12.1 36.2-20.9l28.2 9.3c9 3 19 .5 24.7-7.1c3.5-4.7 6.8-9.5 9.8-14.6l3.1-5.4c2.8-5 5.3-10.2 7.6-15.5c3.7-8.7 .9-18.6-6.2-25l-22.2-19.8c1.1-6.8 1.7-13.8 1.7-20.9s-.6-14.1-1.7-20.9l22.2-19.8zM112 176a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM504.7 500.5c6.3 7.1 16.2 9.9 25 6.2c5.3-2.3 10.5-4.8 15.5-7.6l5.4-3.1c5-3 9.9-6.3 14.6-9.8c7.6-5.7 10.1-15.7 7.1-24.7l-9.3-28.2c8.8-10.7 16-23 20.9-36.2l29.1-6.1c9.3-1.9 16.7-9.1 17.8-18.5c.8-6.7 1.2-13.5 1.2-20.4s-.4-13.7-1.2-20.4c-1.1-9.4-8.6-16.6-17.8-18.5L583.9 307c-5-13.3-12.1-25.5-20.9-36.2l9.3-28.2c3-9 .5-19-7.1-24.7c-4.7-3.5-9.6-6.8-14.6-9.9l-5.3-3c-5-2.8-10.2-5.3-15.6-7.6c-8.7-3.7-18.6-.9-25 6.2l-19.8 22.2c-6.8-1.1-13.8-1.7-20.9-1.7s-14.1 .6-20.9 1.7l-19.8-22.2c-6.3-7.1-16.2-9.9-25-6.2c-5.3 2.3-10.5 4.8-15.6 7.6l-5.2 3c-5.1 3-9.9 6.3-14.6 9.9c-7.6 5.7-10.1 15.7-7.1 24.7l9.3 28.2c-8.8 10.7-16 23-20.9 36.2L315.1 313c-9.3 1.9-16.7 9.1-17.8 18.5c-.8 6.7-1.2 13.5-1.2 20.4s.4 13.7 1.2 20.4c1.1 9.4 8.6 16.6 17.8 18.5l29.1 6.1c5 13.3 12.1 25.5 20.9 36.2l-9.3 28.2c-3 9-.5 19 7.1 24.7c4.7 3.5 9.5 6.8 14.6 9.8l5.4 3.1c5 2.8 10.2 5.3 15.5 7.6c8.7 3.7 18.6 .9 25-6.2l19.8-22.2c6.8 1.1 13.8 1.7 20.9 1.7s14.1-.6 20.9-1.7l19.8 22.2zM464 304a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
                         </svg>
-                        <span class="text-md text-white font-medium pl-2">Physics</span>
+                        <span class="text-md text-white font-medium pl-2">Settings</span>
                     </div>
                 </a>
-                <a class="nav-tile flex flex-col justify-center px-2 py-2 m-1 rounded-full" href="./academic/computer.html" onclick="closeNav();">
+                <a class="nav-tile flex flex-col justify-center px-2 py-2 m-1 rounded-full" href="https://doctxing.github.io" onclick="closeNav();">
                     <div class="flex px-2">
-                        <svg class="bi bi-motherboard-fill" fill="#ffffff" height="24" viewBox="0 0 16 16"
-                             width="24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 7h3V4H5v3Z"/>
-                            <path d="M1 2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 9H1V8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6H1V5H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 2H1Zm11 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7Zm2 0a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7ZM3.5 10a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6ZM4 4h-.5a.5.5 0 0 0 0 1H4v1h-.5a.5.5 0 0 0 0 1H4a1 1 0 0 0 1 1v.5a.5.5 0 0 0 1 0V8h1v.5a.5.5 0 0 0 1 0V8a1 1 0 0 0 1-1h.5a.5.5 0 0 0 0-1H9V5h.5a.5.5 0 0 0 0-1H9a1 1 0 0 0-1-1v-.5a.5.5 0 0 0-1 0V3H6v-.5a.5.5 0 0 0-1 0V3a1 1 0 0 0-1 1Zm7 7.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 0-.5.5Z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="25">
+                            <path fill="#ffffff" d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-167l80 80c9.4 9.4 24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-39 39V184c0-13.3-10.7-24-24-24s-24 10.7-24 24V318.1l-39-39c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9z"/>
                         </svg>
-                        <span class="text-md text-white font-medium pl-2">Computer</span>
+                        <span class="text-md text-white font-medium pl-2">Sources</span>
                     </div>
                 </a>
             </div>
             <div class="h-full flex items-center p-0 overflow-hidden relative mt-8">
-                <div class="flex h-full min-w-full rounded-t-3xl relative text-center md:text-left" style="background-color: #cce0ff; border-top-left-radius: 2.5rem; border-top-right-radius: 2.5rem;">
+                <div class="flex h-full min-w-full rounded-t-3xl relative text-center md:text-left"  style="background-color: #cce0ff; border-top-left-radius: 2.5rem; border-top-right-radius: 2.5rem;">
                     <div class="w-full fixed md:relative bottom-0">
                         <div class="flex justify-center">
                             <div class="inline-flex items-center rounded-2xl bg-white shadow-lg m-6">
@@ -164,10 +160,10 @@
             <div class="max-md:hidden  shrink grow-0 justify-items-start px-1 lg:px-2">
                 <div class="inline-block">
                     <div class="flex flex-row h-14 items-center lg:mx-8 py-1.5 bg-white rounded-full shadow-lg">
-                        <a class="px-3 py-2 ml-2 mr-1 font-medium transition-colors duration-200 rounded-full hover:bg-blue-300" href="./academic/physics.html">Physics</a>
-                        <a class="px-3 py-2 mx-1 font-medium transition-colors duration-200 rounded-full hover:bg-blue-300" href="./academic/biology.html">Biology</a>
-                        <a class="px-3 py-2 mx-1 font-medium transition-colors duration-200 rounded-full hover:bg-blue-300" href="./academic/mathematics/mathematics.html">Mathematics</a>
-                        <a class="px-3 py-2 mr-2 ml-1 font-medium transition-colors duration-200 rounded-full hover:bg-blue-300" href="./academic/computer.html">Computer</a>
+                        <a class="px-3 py-2 ml-2 mr-1 font-medium transition-colors duration-200 rounded-full hover:bg-blue-300" href="./academic/index.html">Academy</a>
+                        <a class="px-3 py-2 mx-1 font-medium transition-colors duration-200 rounded-full hover:bg-blue-300" href="./changelog.html">Communicate</a>
+                        <a class="px-3 py-2 mx-1 font-medium transition-colors duration-200 rounded-full hover:bg-blue-300" href="">Settings</a>
+                        <a class="px-3 py-2 mr-2 ml-1 font-medium transition-colors duration-200 rounded-full hover:bg-blue-300" href="https://doctxing.github.io">Sources</a>
                     </div>
                 </div>
             </div>
@@ -208,6 +204,20 @@
 <div class="min-h-screen flex items-center justify-center px-4 mt-8 mb-20">
     <div class="max-w-6xl p-10 bg-white w-full material-card">
         <span class="font-medium text-5xl">Changelog</span>
+        <div class="max-w-6xl p-10 bg-white w-full material-card">
+            <div id="gitalk-container"></div>
+            <script>
+                const gitalk = new Gitalk({
+                    clientID: '6b9b8395c6fe59074235',
+                    clientSecret: '7961d84ac3b177e0b9b809d8826b762606c43c0c',
+                    repo: 'doctxing',
+                    owner: 'Doctxing',
+                    admin: ['Doctxing'], // Ensure uniqueness and length less than 50
+                    distractionFreeMode: false  // Facebook-like distraction free mode
+                })
+                gitalk.render('gitalk-container')
+            </script>
+        </div>
         <section id="legal">
             <div class="container mt-8">
                 <h2>2023.11.23(主页做好后搞内容😣)</h2>
@@ -282,7 +292,12 @@
     </div>
 </div>
 
+<!-- communicate -->
+<section id="communicate">
+    <div class="flex items-center justify-center px-4 mt-4 mb-20">
 
+    </div>
+</section>
 
 
 

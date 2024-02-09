@@ -16,14 +16,14 @@ function darkmode() {
     color.classList.replace('hover:bg-gray-50', 'hover:bg-gray-900'),
         document.getElementById('darktheme').className === 'fa-shake fa-regular fa-moon' ? (document.getElementById('darktheme').className = 'fa-spin fa-regular fa-sun',
             document.cookie = 'theme=dark',
-            document.getElementById('dark').innerHTML = '\n * {\n color: rgb(255, 255, 255);\n }\n\n body {\n background-color: #181a1e;\n }\n\n .text-black {\n color: rgb(255, 255, 255);\n }\n\n .text-gray-800 {\n color: rgb(255, 255, 255);\n }\n\n .text-gray-700 {\n color: rgb(255, 255, 255);\n }\n\n .bg-white {\n background-color: black;\n }\n\n .bg-gray-300 {\n background-color: #181a1e;\n }\n\n .bg-blue-50 {\n background-color: #23262c;\n }\n\n .bg-blue-100 {\n background-color: #181a1e;\n }\n\n .text-gray-500 {\n color: #e0e0e0;\n }\n\n em {\n color: #1a73e8 !important;\n }\n\n em:hover {\n color: #fff !important;\n }\n\n #battery {\n fill: #fff;\n }\n\n #vector {\n fill: #fff;\n }\n\n #search-d {\n background-color: rgb(0, 0, 0);\n }\n\n .preloader {\n background: #000000 !important;\n }\n\n .heart {\n fill: #ffffff;\n }\n\n @keyframes input-shadow {\n 0% {\n fill: rgba(255, 255, 255, 0.115);\n }\n 10% {\n fill: rgba(255, 255, 255, 0.272);\n }\n 20% {\n fill: rgba(255, 255, 255, 0.435);\n }\n 30% {\n fill: rgba(255, 255, 255, 0.653);\n }\n 40% {\n fill: rgba(255, 255, 255, 0.735);\n }\n 50% {\n fill: rgb(255, 255, 255);\n }\n 60% {\n fill: rgba(255, 255, 255, 0.667);\n }\n 70% {\n fill: rgba(255, 255, 255, 0.524);\n }\n 80% {\n fill: rgba(255, 255, 255, 0.34);\n }\n 100% {\n box-shadow: rgba(255, 255, 255, 0.177);\n }\n }\n\n @-webkit-keyframes input-shadow {\n 0% {\n fill: rgba(255, 255, 255, 0.115);\n }\n 10% {\n fill: rgba(255, 255, 255, 0.272);\n }\n 20% {\n fill: rgba(255, 255, 255, 0.435);\n }\n 30% {\n fill: rgba(255, 255, 255, 0.653);\n }\n 40% {\n fill: rgba(255, 255, 255, 0.735);\n }\n 50% {\n fill: rgb(255, 255, 255);\n }\n 60% {\n fill: rgba(255, 255, 255, 0.667);\n }\n 70% {\n fill: rgba(255, 255, 255, 0.524);\n }\n 80% {\n fill: rgba(255, 255, 255, 0.34);\n }\n 100% {\n box-shadow: rgba(255, 255, 255, 0.177);\n }\n}') : whitemode();
+            document.getElementById('dark').innerHTML = '\n * {\n color: rgb(255, 255, 255);\ntransition: color 0.5s;\n }\n\n body {\n background-color: #181a1e;\ntransition: background-color 0.5s;\n }\n\n .text-black {\n color: rgb(255, 255, 255);\ntransition: color 0.5s;\n }\n\n .text-gray-800 {\n color: rgb(255, 255, 255);\ntransition: color 0.5s;\n }\n\n .text-gray-700 {\n color: rgb(255, 255, 255);\n }\n\n .bg-white {\n background-color: black;\ntransition: background-color 0.5s;\n }\n\n .bg-gray-300 {\n background-color: #181a1e;\ntransition: background-color 0.5s;\n }\n\n .bg-blue-50 {\n background-color: #23262c;\ntransition: background-color 0.5s;\n }\n\n .bg-blue-100 {\n background-color: #181a1e;\ntransition: background-color 0.5s;\n }\n\n .text-gray-500 {\n color: #e0e0e0;\ntransition: background-color 0.5s;\n }\n\n em {\n color: #1a73e8 !important;\ntransition: color 0.5s;\n }\n\n em:hover {\n color: #fff !important;\ntransition: color 0.5s;\n }\n\n #battery {\n fill: #fff;\n }\n\n #vector {\n fill: #fff;\n }\n\n #search-d {\n background-color: rgb(0, 0, 0);\n }\n\n .preloader {\n background: #000000 !important;\n }\n\n .heart {\n fill: #ffffff;\n }\n\n @keyframes input-shadow {\n 0% {\n fill: rgba(255, 255, 255, 0.115);\n }\n 10% {\n fill: rgba(255, 255, 255, 0.272);\n }\n 20% {\n fill: rgba(255, 255, 255, 0.435);\n }\n 30% {\n fill: rgba(255, 255, 255, 0.653);\n }\n 40% {\n fill: rgba(255, 255, 255, 0.735);\n }\n 50% {\n fill: rgb(255, 255, 255);\n }\n 60% {\n fill: rgba(255, 255, 255, 0.667);\n }\n 70% {\n fill: rgba(255, 255, 255, 0.524);\n }\n 80% {\n fill: rgba(255, 255, 255, 0.34);\n }\n 100% {\n box-shadow: rgba(255, 255, 255, 0.177);\n }\n }\n\n @-webkit-keyframes input-shadow {\n 0% {\n fill: rgba(255, 255, 255, 0.115);\n }\n 10% {\n fill: rgba(255, 255, 255, 0.272);\n }\n 20% {\n fill: rgba(255, 255, 255, 0.435);\n }\n 30% {\n fill: rgba(255, 255, 255, 0.653);\n }\n 40% {\n fill: rgba(255, 255, 255, 0.735);\n }\n 50% {\n fill: rgb(255, 255, 255);\n }\n 60% {\n fill: rgba(255, 255, 255, 0.667);\n }\n 70% {\n fill: rgba(255, 255, 255, 0.524);\n }\n 80% {\n fill: rgba(255, 255, 255, 0.34);\n }\n 100% {\n box-shadow: rgba(255, 255, 255, 0.177);\n }\n}') : whitemode();
 }
 
 function whitemode() {
     document.getElementById('dark').innerHTML = '',
         document.getElementById('darktheme').className = 'fa-shake fa-regular fa-moon',
         document.cookie = 'theme=white',
-        document.getElementById('dark').innerHTML = '\n body {\n background-color: #d7e8ff;\n }\n\n .preloader {\n background: #ffffff !important;\n }';
+        document.getElementById('dark').innerHTML = '\n body {\n background-color: #d7e8ff;\n }.bg-white {\n background-color: #fff;\ntransition: background-color 0.5s;\n }\n.bg-blue-50 {\n background-color: bg-blue-50;\ntransition: background-color 0.5s;\n }';
 }
 
 function isInclude(name) {
@@ -43,13 +43,23 @@ function topFunction() {
     document.body.scrollTop = 0, document.documentElement.scrollTop = 0;
 }
 
-function closeNav() {
-    modal.classList.remove('fadeIn'),
-        modal.classList.add('fadeOut'),
+function closeModal(modals) {
+    modals.classList.remove('fadeIn'),
+        modals.classList.add('fadeOut'),
         document.querySelector('body').style.overflow = 'visible',
         setTimeout(() => {
-            modal.style.display = 'none';
+            modals.style.display = 'none';
         }, 500);
+}
+
+function openModal(modals) {
+    modals.classList.remove('fadeOut'),
+        modals.classList.add('fadeIn'),
+        modals.style.display = 'flex';
+}
+
+function closeNav() {
+    closeModal(modal)
 }
 
 function openNav() {
@@ -85,9 +95,7 @@ function openNav() {
     }
 
     //时间
-    modal.classList.remove('fadeOut'),
-        modal.classList.add('fadeIn'),
-        modal.style.display = 'flex';
+    openModal(modal)
     const GetTime = new Date();
     let Hour = GetTime.getHours();
     Hour < 10 && (Hour = '0' + Hour);
@@ -100,27 +108,11 @@ function openNav() {
     Betery.then(show);
 }
 
-function closeModal(modals) {
-    modals.classList.remove('fadeIn'),
-        modals.classList.add('fadeOut'),
-        document.querySelector('body').style.overflow = 'visible',
-        setTimeout(() => {
-            modals.style.display = 'none';
-        }, 500);
-}
-
-function openModal(modals) {
-    modals.classList.remove('fadeOut'),
-        modals.classList.add('fadeIn'),
-        modals.style.display = 'flex';
-}
-
 const modal = document.querySelector('.main-modal')
 const mybutton = document.getElementById('back-to-top')//go back to the top 按钮
 const modalx = document.getElementById('donation')
 const modaly = document.getElementById('academy')
-const hititle = document.getElementById('inhit_title')
-const hisub = document.getElementById('inhit_sub')
+const inhit = document.getElementById('inhit')
 const position = document.getElementById('fontAwesomeCss');
 
 window.onscroll = function () {
@@ -129,6 +121,5 @@ window.onscroll = function () {
 if (document.cookie === 'theme=dark') darkmode();
 else document.cookie === 'theme=white' ? whitemode() : window.matchMedia('(prefers-color-scheme: dark)').matches ? darkmode() : whitemode();
 if (isInclude('test.js')) {
-    hititle.style.display = ''
-    hisub.style.display = '';
+    inhit.style.display = ''
 }
