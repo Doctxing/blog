@@ -8,7 +8,7 @@
 * topFunction()     //到顶部
 * openNav()     //一些栏
 * closeNav()
-* openModal(modals)
+* openModal(modals) //减少
 * openModal(modals)
 */
 function darkmode() {
