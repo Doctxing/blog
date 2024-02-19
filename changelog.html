@@ -204,21 +204,6 @@
 <div class="min-h-screen flex items-center justify-center px-4 mt-8 mb-20">
     <div class="max-w-6xl p-10 bg-white w-full material-card">
         <span class="font-medium text-5xl">Changelog</span>
-        <div class="max-w-6xl p-10 bg-white w-full material-card">
-            <div id="gitalk-container"></div>
-            <script>
-                const gitalk = new Gitalk({
-                    clientID: '6b9b8395c6fe59074235',
-                    clientSecret: '7961d84ac3b177e0b9b809d8826b762606c43c0c',
-                    repo: 'doctxing',
-                    owner: 'Doctxing',
-                    admin: ['Doctxing'], // Ensure uniqueness and length less than 50
-                    proxy: 'http://crossorigin.me/https://github.com/login/oauth/access_token'
-                    distractionFreeMode: false  // Facebook-like distraction free mode
-                })
-                gitalk.render('gitalk-container')
-            </script>
-        </div>
         <section id="legal">
             <div class="container mt-8">
                 <h2>2023.11.23(主页做好后搞内容😣)</h2>
@@ -290,6 +275,22 @@
                 </div>
             </div>
         </section>
+        <br>
+        <div class="max-w-6xl p-10 bg-white w-full material-card">
+            <div id="gitalk-container"></div>
+            <script>
+                const gitalk = new Gitalk({
+                    clientID: '6b9b8395c6fe59074235',
+                    clientSecret: '7961d84ac3b177e0b9b809d8826b762606c43c0c',
+                    repo: 'blog',
+                    owner: 'Doctxing',
+                    admin: ['Doctxing'], // Ensure uniqueness and length less than 50
+                    proxy: 'http://crossorigin.me/https://github.com/login/oauth/access_token',
+                    distractionFreeMode: false  // Facebook-like distraction free mode
+                })
+                gitalk.render('gitalk-container')
+            </script>
+        </div>
     </div>
 </div>
 
