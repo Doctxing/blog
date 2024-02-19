@@ -29,7 +29,7 @@
 
 - 算法 / Algorithm
 - 硬件 / Hardware
-- 一些设备树 / Device Tree
+- 设备树 / Device Tree
 - 数学分析 / Mathematical Analysis
 - 高等代数 / Advanced Algebra
 - 量子力学 / Quantum Mechanics
