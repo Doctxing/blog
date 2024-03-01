@@ -1,0 +1,26 @@
+{
+  "blue":{
+    "white-bg-color": "#d7e8ff",
+    "color": "#1a73e8"
+  },
+  "red": {
+    "white-bg-color": "#fbeded",
+    "color": "#c20000"
+  },
+  "purple": {
+    "white-bg-color": "#f8ebff",
+    "color": "#9349dd"
+  },
+  "grey": {
+    "white-bg-color": "#d1d1d1",
+    "color": "#808080"
+  },
+  "darkgreen": {
+    "white-bg-color": "#eafbfa",
+    "color": "#00958d"
+  },
+  "lightgreen": {
+    "white-bg-color": "#f0f6e3",
+    "color": "#7ab300"
+  }
+}
