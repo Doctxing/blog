@@ -180,7 +180,7 @@ window.addEventListener('load', function() {
         updateThemeColor(memorial[date_in_num]['color']);
     } else {
         console.log("What a nice day!");
-        updateThemeColor('purple');
+        updateThemeColor('darkgreen');
     }
 
 
