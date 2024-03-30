@@ -1,30 +1,23 @@
 let theme,colorname;
 let colors={},memorial={};
-const GetTime = new Date();
-const Day = GetTime.toDateString();
-const month = (GetTime.getMonth() + 1).toString().padStart(2, '0'); // 月份加1，因为月份从0开始，然后用padStart确保是两位数
-const day_in_num = GetTime.getDate().toString().padStart(2, '0');
-const date_in_num = month + '-' + day_in_num;
-let Hour = GetTime.getHours().toString().padStart(2, '0');
-let Minutes = GetTime.getMinutes().toString().padStart(2, '0');
+let battery,Time,Day,month,day_in_num,date_in_num, Hour,Minutes;
 const userLanguage = navigator.language || navigator.userLanguage;
 const root = document.documentElement;
-const themeColor = getComputedStyle(root).getPropertyValue('--current-theme-color');
 const modal = document.querySelector('.main-modal')
-const mybutton = document.getElementById('back-to-top')//go back to the top 按钮
-const modalx = document.getElementById('donation')
-const modaly = document.getElementById('color-setting')
+const topButton = document.getElementById('back-to-top')//go back to the top Button
+const donateButton = document.getElementById('donation')
+const settingButton = document.getElementById('color-setting')
 
 function readJson(jsonUrl,data){
     const xhr = new XMLHttpRequest();
     xhr.overrideMimeType("application/json");
-    xhr.open('GET', jsonUrl, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
+    xhr.open('get', jsonUrl);
+    xhr.send(null);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
             Object.assign(data, JSON.parse(xhr.responseText));
         }
     };
-    xhr.send(null);
 }
 
 function updateThemeColor(colorName) {
@@ -83,27 +76,23 @@ function closeNav() {
 }
 
 function openNav() {
-    function show(num_bet) {
-        BetteryShow(num_bet), BetteryPercentage(num_bet);
-    }
-
     //电量
     function BetteryPercentage(per_bet) {
         document.getElementById('percentage').innerHTML = Math.round(per_bet.level * 100) + '%';
     }
 
     //显示电池格
-    function BetteryShow(perofb) {
-        if (perofb.level < 0.1) document.getElementById('battery').innerHTML = '\n <path d="M16,20H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
-            if (perofb.level >= 0.1 && perofb.level < 0.2) document.getElementById('battery').innerHTML = '\n <path d="M16,18H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
-                if (perofb.level >= 0.2 && perofb.level < 0.3) document.getElementById('battery').innerHTML = '\n <path d="M16,18H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
-                    if (perofb.level >= 0.3 && perofb.level < 0.4) document.getElementById('battery').innerHTML = '\n <path d="M16,15H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
-                        if (perofb.level >= 0.4 && perofb.level < 0.5) document.getElementById('battery').innerHTML = '\n <path d="M16,14H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
-                            if (perofb.level >= 0.5 && perofb.level < 0.6) document.getElementById('battery').innerHTML = '\n <path d="M16,13H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
-                                if (perofb.level >= 0.6 && perofb.level < 0.7) document.getElementById('battery').innerHTML = '\n <path d="M16,12H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
-                                    if (perofb.level >= 0.7 && perofb.level < 0.8) document.getElementById('battery').innerHTML = '\n <path d="M16,10H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
-                                        if (perofb.level >= 0.8 && perofb.level < 0.9) document.getElementById('battery').innerHTML = '\n <path d="M16,9H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />';
-                                        else perofb.level >= 0.9 && perofb.level < 1 ? document.getElementById('battery').innerHTML = '\n <path d="M16,8H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />' : document.getElementById('battery').innerHTML = '\n <path d="M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />';
+    function BetteryShow(percentage) {
+        if (percentage.level < 0.1) document.getElementById('battery').innerHTML = '\n <path d="M16,20H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+            if (percentage.level >= 0.1 && percentage.level < 0.2) document.getElementById('battery').innerHTML = '\n <path d="M16,18H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                if (percentage.level >= 0.2 && percentage.level < 0.3) document.getElementById('battery').innerHTML = '\n <path d="M16,18H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                    if (percentage.level >= 0.3 && percentage.level < 0.4) document.getElementById('battery').innerHTML = '\n <path d="M16,15H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                        if (percentage.level >= 0.4 && percentage.level < 0.5) document.getElementById('battery').innerHTML = '\n <path d="M16,14H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                            if (percentage.level >= 0.5 && percentage.level < 0.6) document.getElementById('battery').innerHTML = '\n <path d="M16,13H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                                if (percentage.level >= 0.6 && percentage.level < 0.7) document.getElementById('battery').innerHTML = '\n <path d="M16,12H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                                    if (percentage.level >= 0.7 && percentage.level < 0.8) document.getElementById('battery').innerHTML = '\n <path d="M16,10H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />'; else {
+                                        if (percentage.level >= 0.8 && percentage.level < 0.9) document.getElementById('battery').innerHTML = '\n <path d="M16,9H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />';
+                                        else percentage.level >= 0.9 && percentage.level < 1 ? document.getElementById('battery').innerHTML = '\n <path d="M16,8H8V6H16M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />' : document.getElementById('battery').innerHTML = '\n <path d="M16.67,4H15V2H9V4H7.33A1.33,1.33 0 0,0 6,5.33V20.67C6,21.4 6.6,22 7.33,22H16.67A1.33,1.33 0 0,0 18,20.67V5.33C18,4.6 17.4,4 16.67,4Z" />';
                                     }
                                 }
                             }
@@ -114,16 +103,22 @@ function openNav() {
         }
     }
 
-    //时间
+    function show(num_bet) {
+        BetteryShow(num_bet), BetteryPercentage(num_bet);
+    }
+    function setContent() {
+        document.getElementById('time').innerHTML = Hour + ':' + Minutes;
+        document.getElementById('date').innerHTML = Day.substring(0, 3) + ',' + Day.substring(3);
+        document.querySelector('body').style.overflow = 'hidden';
+        battery.then(show);
+    }
+    setContent()
+    setInterval(setContent,1000)
     openModal(modal);
-    document.getElementById('time').innerHTML = Hour + ':' + Minutes;
-    document.getElementById('date').innerHTML = Day.substring(0, 3) + ',' + Day.substring(3), document.querySelector('body').style.overflow = 'hidden';
-    let Betery = navigator.getBattery();
-    Betery.then(show);
 }
 
 function scrollFunction() {
-    (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? mybutton.style.display = 'block' : mybutton.style.display = 'none';
+    (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? topButton.style.display = 'block' : topButton.style.display = 'none';
 }
 
 function topFunction() {
@@ -146,6 +141,20 @@ function resetHoverColor(element) {
         element.style.backgroundColor = 'var(--current-color)'; // 恢复到默认的背景颜色
     }
 }
+
+function refreshData(){
+    battery = navigator.getBattery();
+    Time = new Date();
+    Day = Time.toDateString();
+    month = (Time.getMonth() + 1).toString().padStart(2, '0'); // 月份加1，因为月份从0开始，然后用padStart确保是两位数
+    day_in_num = Time.getDate().toString().padStart(2, '0');
+    date_in_num = month + '-' + day_in_num;
+    Hour = Time.getHours().toString().padStart(2, '0');
+    Minutes = Time.getMinutes().toString().padStart(2, '0');
+}
+
+refreshData()
+setInterval(refreshData, 1000);
 
 readJson('/js/colors.json',colors);
 readJson('/js/memorial.json',memorial);
