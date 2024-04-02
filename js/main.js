@@ -1,30 +1,21 @@
-let theme,colorname;
-let colors={},memorial={};
-let battery,Time,Day,month,day_in_num,date_in_num, Hour,Minutes;
-const userLanguage = navigator.language || navigator.userLanguage;
-const root = document.documentElement;
-const modal = document.querySelector('.main-modal')
-const topButton = document.getElementById('back-to-top')//go back to the top Button
-const donateButton = document.getElementById('donation')
-const settingButton = document.getElementById('color-setting')
-
+//读取json后存在session storage
 function readJson(jsonUrl,data){
     const xhr = new XMLHttpRequest();
     xhr.overrideMimeType("application/json");
     xhr.open('get', jsonUrl);
-    xhr.send(null);
     xhr.onload = function () {
         if (xhr.status === 200) {
             Object.assign(data, JSON.parse(xhr.responseText));
         }
     };
+    xhr.send(null);
 }
-
+//更新主题
 function updateThemeColor(colorName) {
-    if (colors[colorName]) {
+    if (data['colors'][colorName]) {
         colorname=colorName;
-        root.style.setProperty('--theme-color', colors[colorName]['color']);
-        root.style.setProperty('--light-bg-color', colors[colorName]['white-bg-color']);
+        root.style.setProperty('--theme-color', data['colors'][colorName]['color']);
+        root.style.setProperty('--light-bg-color', data['colors'][colorName]['white-bg-color']);
         let colorbuttons = document.querySelectorAll('.color-selector');
         colorbuttons.forEach(button => {
             // 如果按钮的文本内容与所选颜色相同，则将其背景颜色更改为鼠标悬停时的颜色
@@ -38,7 +29,7 @@ function updateThemeColor(colorName) {
         });
     }
 }
-
+//关闭模块
 function closeModal(modals) {
     modals.classList.remove('fadeIn'),
         modals.classList.add('fadeOut'),
@@ -47,13 +38,13 @@ function closeModal(modals) {
             modals.style.display = 'none';
         }, 500);
 }
-
+//优雅的打开模块
 function openModal(modals) {
-    modals.classList.remove('fadeOut'),
-        modals.classList.add('fadeIn'),
-        modals.style.display = 'flex';
+    modals.classList.remove('fadeOut');
+    modals.classList.add('fadeIn');
+    modals.style.display = 'flex';
 }
-
+//needless to say
 function darkmode() {
     document.getElementById('darktheme').className ==='fa-shake fa-regular fa-moon' ?
         (document.getElementById('darktheme').className = 'fa-spin fa-regular fa-sun',
@@ -62,7 +53,6 @@ function darkmode() {
             document.documentElement.style.setProperty('--current-color','var(--dark-color)'),
             document.documentElement.style.setProperty('--bg-color','var(--dark-bg-color)')) : whitemode();
 }
-
 function whitemode() {
     document.getElementById('darktheme').className = 'fa-shake fa-regular fa-moon';
     document.getElementById('prism').href=('./assets/prism/prism.css');
@@ -70,11 +60,11 @@ function whitemode() {
     document.documentElement.style.setProperty('--current-color','var(--light-color)');
     document.documentElement.style.setProperty('--bg-color','var(--light-bg-color)');
 }
-
+//窄模式下右边栏
 function closeNav() {
+    clearInterval(openNav());
     closeModal(modal)
 }
-
 function openNav() {
     //电量
     function BetteryPercentage(per_bet) {
@@ -107,41 +97,53 @@ function openNav() {
         BetteryShow(num_bet), BetteryPercentage(num_bet);
     }
     function setContent() {
+        refreshData();
         document.getElementById('time').innerHTML = Hour + ':' + Minutes;
         document.getElementById('date').innerHTML = Day.substring(0, 3) + ',' + Day.substring(3);
         document.querySelector('body').style.overflow = 'hidden';
         battery.then(show);
     }
+
     setContent()
-    setInterval(setContent,1000)
     openModal(modal);
+    return setInterval(setContent,1000)
 }
-
+//滑倒最上面
 function scrollFunction() {
-    (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? topButton.style.display = 'block' : topButton.style.display = 'none';
+    if ((window.pageYOffset > 200 || window.scrollY > 200) && topButton.style.display === 'none'){
+        topButton.classList.remove('fadeOut');
+        topButton.classList.add('fadeIn');
+        topButton.style.display = 'block'
+    }
+    if ((window.pageYOffset < 20 || window.scrollY < 20) && topButton.style.display === 'block') {
+        topButton.classList.remove('fadeIn');
+        topButton.classList.add('fadeOut');
+        setTimeout(() => {
+            topButton.style.display = 'none';
+        }, 500);
+    }
 }
-
 function topFunction() {
-    document.body.scrollTop = 0, document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
-
+//设置主题时候改hover的
 function changeHoverColor(element) {
     const colorName = element.innerText.trim();
     if(colorname!==colorName){
-        const colorValue = colors[colorName]['color'];
+        const colorValue = data['colors'][colorName]['color'];
         if (colorValue) {
             element.style.backgroundColor = colorValue;
         }
     }
 }
-
 function resetHoverColor(element) {
     const colorName = element.innerText.trim();
     if(colorname!==colorName){
         element.style.backgroundColor = 'var(--current-color)'; // 恢复到默认的背景颜色
     }
 }
-
+//更新时间数据
 function refreshData(){
     battery = navigator.getBattery();
     Time = new Date();
@@ -153,49 +155,50 @@ function refreshData(){
     Minutes = Time.getMinutes().toString().padStart(2, '0');
 }
 
-refreshData()
-setInterval(refreshData, 1000);
+let theme,colorname;
+let data = {};
+let battery,Time,Day,month,day_in_num,date_in_num, Hour,Minutes;
+const userLanguage = navigator.language || navigator.userLanguage;
+const root = document.documentElement;
+const modal = document.querySelector('.main-modal')
+const topButton = document.getElementById('back-to-top')//go back to the top Button
+const donateButton = document.getElementById('donation')
+const settingButton = document.getElementById('color-setting')
 
-readJson('/js/colors.json',colors);
-readJson('/js/memorial.json',memorial);
+const xhr = new XMLHttpRequest();
+xhr.overrideMimeType("application/json");
+xhr.open('get', '/js/db.json');
+xhr.onload = function () {
+    if (xhr.status === 200) {
+        Object.assign(data, JSON.parse(xhr.responseText));
+    }
+};
+xhr.send(null);
+
+refreshData()
 
 window.onscroll = function (){scrollFunction();}
 
+//设置初始主题
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {darkmode();theme="dark";}
 else {whitemode();theme="light";}
 
-if (userLanguage.startsWith('zh')){
-    document.querySelector("html").lang="zh";
-}
-else {
-    document.querySelector("html").lang="en";
-}
+//保证语言合适，去掉恶心的翻译提示
+if (userLanguage.startsWith('zh')){document.querySelector("html").lang="zh";}
+else {document.querySelector("html").lang="en";}
 
+//加载完毕后执行
 window.addEventListener('load', function() {
-    console.log("\n"+
-        "▓█████▄  ▒█████   ▄████▄  ▄▄▄█████▓▒██   ██▒ ██▓ ███▄    █   ▄████ \n" +
-        "▒██▀ ██▌▒██▒  ██▒▒██▀ ▀█  ▓  ██▒ ▓▒▒▒ █ █ ▒░▓██▒ ██ ▀█   █  ██▒ ▀█▒\n" +
-        "░██   █▌▒██░  ██▒▒▓█    ▄ ▒ ▓██░ ▒░░░  █   ░▒██▒▓██  ▀█ ██▒▒██░▄▄▄░\n" +
-        "░▓█▄   ▌▒██   ██░▒▓▓▄ ▄██▒░ ▓██▓ ░  ░ █ █ ▒ ░██░▓██▒  ▐▌██▒░▓█  ██▓\n" +
-        "░▒████▓ ░ ████▓▒░▒ ▓███▀ ░  ▒██▒ ░ ▒██▒ ▒██▒░██░▒██░   ▓██░░▒▓███▀▒\n" +
-        " ▒▒▓  ▒ ░ ▒░▒░▒░ ░ ░▒ ▒  ░  ▒ ░░   ▒▒ ░ ░▓ ░░▓  ░ ▒░   ▒ ▒  ░▒   ▒ \n" +
-        " ░ ▒  ▒   ░ ▒ ▒░   ░  ▒       ░    ░░   ░▒ ░ ▒ ░░ ░░   ░ ▒░  ░   ░ \n" +
-        " ░ ░  ░ ░ ░ ░ ▒  ░          ░       ░    ░   ▒ ░   ░   ░ ░ ░ ░   ░ \n" +
-        "   ░        ░ ░  ░ ░                ░    ░   ░           ░       ░ \n" +
-        " ░               ░                                                 ")
-
-    if (memorial.hasOwnProperty(date_in_num)) {
-        console.log(memorial[date_in_num]['saySth']);
-        updateThemeColor(memorial[date_in_num]['color']);
-    } else {
-        console.log("What a nice day!");
-        updateThemeColor('darkgreen');
-    }
-
-
     setTimeout(function() {
+        console.log('%c𝕴 𝖆𝖒 𝕯𝖔𝖈𝖙𝖝𝖎𝖓𝖌','font-size: 48px')
+        if (data['memorial'].hasOwnProperty(date_in_num)) {
+            console.log(data['memorial'][date_in_num]['saySth']);
+            updateThemeColor(data['memorial'][date_in_num]['color']);
+        } else {
+            console.log("%cWhat a nice day!",'font-size: 20px');
+            updateThemeColor('darkgreen');
+        }
         const cover=document.getElementById('cover');
         closeModal(cover);
-    }, 1000); // 0.5秒延迟
+    }, 1000);// 1秒推迟
 });
-
