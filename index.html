@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="./image/avartar.png" rel="icon">
+    <link href="./image/avatar_round.webp" rel="icon">
     <title> DoctxingのBlog </title>
     <script src="./assets/tailwind/tailwind.js"></script>
     <link href="./assets/fontawesome/css/all.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 <!--  Cover -->
 <div class="fixed w-full h-full  z-50 overflow-hidden flex flex-col justify-center items-center animated faster"
      id="cover" style="background: var(--current-color);">
-    <img alt="avartar" class="avatar w-40 md:w-60" src="./image/avartar.jpg">
+    <img alt="avatar" class="avatar w-40 md:w-60" src="./image/avatar.webp">
     <br>
     <span class="text-6xl max-[410px]:text-5xl md:hidden">DXのBlog</span>
     <span class="hidden text-6xl md:block">DoctxingのBlog</span>
@@ -191,8 +191,8 @@
                     <div class="navbar-btn color-selector rounded-3xl" onclick="updateThemeColor('grey')"
                          onmouseleave="resetHoverColor(this)" onmouseover="changeHoverColor(this)">grey
                     </div>
-                    <div class="navbar-btn color-selector rounded-3xl" onclick="updateThemeColor('purple')"
-                         onmouseleave="resetHoverColor(this)" onmouseover="changeHoverColor(this)">purple
+                    <div class="navbar-btn color-selector rounded-3xl" onclick="updateThemeColor('pink')"
+                         onmouseleave="resetHoverColor(this)" onmouseover="changeHoverColor(this)">pink
                     </div>
                     <div class="navbar-btn color-selector rounded-3xl" onclick="updateThemeColor('darkgreen')"
                          onmouseleave="resetHoverColor(this)" onmouseover="changeHoverColor(this)">darkgreen
@@ -213,17 +213,17 @@
             <!-- Home -->
             <a class="navbar-btn h-14 items-center inline-flex px-3 py-3 rounded-3xl hover:bg-custom shadow-xl"
                href="#/" onclick="switchContent()">
-                <img alt="avartar" class="avatar" height="26" src="./image/avartar.jpg" width="26">
+                <img alt="avatar" class="avatar" src="./image/avatar.webp" width="26">
                 <span class="inline font-medium pt-0.5 ml-2 lg:mr-1">DXのBlog</span>
             </a>
             <div class="max-md:hidden shrink grow-0 justify-items-start px-1 lg:px-2">
                 <div class="inline-block">
                     <div class="navbar-btn flex flex-row h-14 items-center lg:mx-8 py-1.5 rounded-full shadow-lg">
-                        <a class="px-3 py-2 ml-2 mr-1 font-medium rounded-full hover:bg-custom"
+                        <a class="navbar-btn px-3 py-2 ml-2 mr-1 font-medium rounded-full hover:bg-custom"
                            href="#/acada/">Blogs</a>
-                        <a class="px-3 py-2 mx-1 font-medium rounded-full hover:bg-custom"
+                        <a class="navbar-btn px-3 py-2 mx-1 font-medium rounded-full hover:bg-custom"
                            href="https://github.com/Doctxing/blog/issues">Communicate</a>
-                        <a class="px-3 py-2 mr-2 ml-1 font-medium rounded-full hover:bg-custom"
+                        <a class="navbar-btn px-3 py-2 mr-2 ml-1 font-medium rounded-full hover:bg-custom"
                            onclick="openModal(settingButton)">Settings</a>
                     </div>
                 </div>

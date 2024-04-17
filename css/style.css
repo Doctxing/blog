@@ -1,3 +1,21 @@
+* {
+    outline: 0 !important;
+    word-wrap: break-word;
+}
+
+:root {
+    --dark-bg-color: #181a1e;
+    --light-bg-color: #d7e8ff;
+    --dark-color: black;
+    --light-color: white;
+    --theme-color: #1a73e8;
+    --current-theme-color: var(--theme-color);
+    --fatext-color: var(--theme-color);
+    --text-color: var(--dark-color);
+    --current-color: var(--light-color);
+    --bg-color: var(--light-bg-color);
+}
+
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600");* {
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -5,10 +23,6 @@
     -webkit-text-size-adjust: none;
     -webkit-touch-callout: none;
     box-sizing: border-box
-}
-* {
-    outline: 0 !important;
-    word-wrap: break-word;
 }
 
 @font-face {
@@ -31,11 +45,202 @@
     font-family: google-sans-medium, sans-serif
 }
 
+body,
+html {
+    margin: 0;
+    font-family: google-sans, sans-serif;
+    height: auto;
+    overflow-x: hidden
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: color 0.5s ,background-color 0.5s;
+    -webkit-transition: color 0.5s ,background-color 0.5s;
+}
+
+#nav-bar {
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+    padding: 0 !important;
+}
+
+.scroll-margin {
+    scroll-margin-top: 4rem
+}
+
+.material-card {
+    border-radius: 2.5rem;
+    background-color: var(--current-color);
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+}
+
+.center {
+    display: flex;
+    align-items: center
+}
+
+.filled-btn {
+    font-size: 14px;
+    font-family: google-sans-medium, sans-serif;
+    background: var(--current-theme-color);
+    color: #fff;
+    border-radius: 99px
+}
+
+.avatar {
+    border-radius: 100vh;
+    overflow: hidden
+}
+
+@media only screen and (max-width: 969px) {
+    #team-grid {
+        grid-template-areas: "a a" "b b"
+    }
+}
+
+.close-btn {
+    color: #e05656;
+    line-height: 7vh;
+    margin-bottom: 0;
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+}
+
+.close-btn:hover {
+    color: #fff;
+    background: var(--current-theme-color);
+    border-radius: 12px;
+    transition: color 0.5s ,background-color 0.5s;
+    -webkit-transition: color 0.5s,background-color 0.5s;
+}
+
+.footer-btn {
+    color: var(--current-theme-color);
+    line-height: 7vh;
+    margin-bottom: 0;
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+}
+
+.footer-btn:hover {
+    color: #fff;
+    background: var(--current-theme-color);
+    border-radius: 12px;
+}
+
+#back-to-top {
+    display: none;
+    cursor: pointer
+}
+
+.nav-tile {
+    background-color: var(--current-theme-color)
+}
+
+#back-to-top,
+#back-to-top em,
+.navbar-btn,
+.navbar-btn em{
+    background-color: var(--current-color) ;
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+}
+
+#back-to-top em,
+.navbar-btn em{
+    color: var(--fatext-color)
+}
+
+
+.hover\:bg-custom:hover,
+.hover\:bg-custom:hover em {
+    background-color: var(--current-theme-color) !important;
+    color: #fff !important;
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+}
+
+
+#back-to-top:hover svg,
+.navbar-btn:hover svg,
+.footer-btn:hover svg {
+    filter: invert(100%) saturate(18%) brightness(200%) contrast(100%) !important
+
+}
+
+.color-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.5s,background-color 0.5s;
+    -webkit-transition: color 0.5s,background-color 0.5s;
+}
+
+.color-selector:hover{
+    color: white;
+    transition: color 0.5s,background-color 0.5s;
+    -webkit-transition: color 0.5s,background-color 0.5s;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.animated.faster {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn
+}
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
 .markdown-section>* {
     box-sizing: border-box;
     font-size: inherit
 }
 
+.markdown-section ol, .markdown-section p, .markdown-section ul{
+    font-weight: 600;
+    margin-left: 0;
+}
 
 /* markdown content found on pages */
 .markdown-section h1,
@@ -43,12 +248,11 @@
 .markdown-section h3,
 .markdown-section h4,
 .markdown-section strong {
-    color: #2c3e50;
     font-weight: 600;
 }
 
 .markdown-section h1 {
-    font-size: 2rem;
+    font-size: 2.75rem;
     margin: 0 0 1rem;
 }
 .markdown-section h2 {
@@ -192,9 +396,9 @@
     border-radius: 6px;
 }
 
-.markdown-section ol, .markdown-section p, .markdown-section ul {
-    line-height: 1.6rem;
-    word-spacing: .05rem;
+.markdown-section ol, .markdown-section p, .markdown-section ul{
+    font-weight: 600;
+    margin-left: 0;
 }
 
 .markdown-section code,
@@ -284,270 +488,4 @@
 .markdown-section pre::after,
 .markdown-section output::after {
     content: attr(data-lang);
-}
-
-
-:root {
-    --dark-bg-color: #181a1e;
-    --light-bg-color: #d7e8ff;
-    --dark-color: black;
-    --light-color: white;
-    --theme-color: #1a73e8;
-    --current-theme-color: var(--theme-color);
-    --fatext-color: var(--theme-color);
-    --text-color: var(--dark-color);
-    --current-color: var(--light-color);
-    --bg-color: var(--light-bg-color);
-}
-
-body,
-html {
-    margin: 0;
-    font-family: google-sans, sans-serif;
-    height: auto;
-    overflow-x: hidden
-}
-
-body {
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    transition: color 0.5s ,background-color 0.5s;
-    -webkit-transition: color 0.5s ,background-color 0.5s;
-}
-
-
-
-#nav-bar {
-    position: sticky !important;
-    position: -webkit-sticky !important;
-    top: 0 !important;
-    z-index: 10 !important;
-    padding: 0 !important;
-}
-
-.scroll-margin {
-    scroll-margin-top: 4rem
-}
-
-.material-card {
-    border-radius: 2.5rem;
-    background-color: var(--current-color);
-    transition: background-color 0.5s;
-    -webkit-transition: background-color 0.5s;
-}
-
-.center {
-    display: flex;
-    align-items: center
-}
-
-.filled-btn {
-    font-size: 14px;
-    font-family: google-sans-medium, sans-serif;
-    background: var(--current-theme-color);
-    color: #fff;
-    border-radius: 99px
-}
-
-#features-card {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-}
-
-#team-grid {
-    grid-template-areas: "a a b b"
-}
-
-.avatar {
-    border-radius: 100vh;
-    overflow: hidden
-}
-
-.team-border {
-    border-left: 4px solid #3d3d3d
-}
-
-.team-member {
-    min-width: 380px
-}
-
-.team-member img {
-    max-width: none
-}
-
-@media only screen and (max-width: 969px) {
-    #team-grid {
-        grid-template-areas: "a a" "b b"
-    }
-}
-
-h1 *{
-    font-size:40px;
-    color: var(--current-theme-color);
-}
-#legal h1 {
-
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 40px;
-    color: var(--current-theme-color);
-
-}
-
-.markdown-section ol, .markdown-section p, .markdown-section ul{
-    font-weight: 600;
-    margin-left: 0;
-}
-hr{
-    color: var(--text-color);
-    transition: color 0.5s;
-    -webkit-transition: color 0.5s;
-}
-
-h2,
-h2 *{
-    font-size: 25px;
-    transition: color 0.5s;
-    -webkit-transition: color 0.5s;
-}
-
-h2 *{
-    color: var(--current-theme-color);
-}
-
-
-.close-btn {
-    color: #e05656;
-    line-height: 7vh;
-    margin-bottom: 0;
-    transition: color 0.5s;
-    -webkit-transition: color 0.5s;
-}
-
-.close-btn:hover {
-    color: #fff;
-    background: var(--current-theme-color);
-    border-radius: 12px;
-    transition: color 0.5s ,background-color 0.5s;
-    -webkit-transition: color 0.5s,background-color 0.5s;
-}
-
-.footer-btn {
-    color: var(--current-theme-color);
-    line-height: 7vh;
-    margin-bottom: 0;
-    transition: color 0.5s;
-    -webkit-transition: color 0.5s;
-}
-
-.footer-btn:hover {
-    color: #fff;
-    background: var(--current-theme-color);
-    border-radius: 12px;
-}
-
-#back-to-top {
-    display: none;
-    cursor: pointer
-}
-
-.device-sec {
-    padding: 20px 0;
-    scroll-margin-top: 4rem
-}
-
-.nav-tile {
-    background-color: var(--current-theme-color)
-}
-
-#back-to-top,
-#back-to-top em,
-.navbar-btn,
-.navbar-btn em{
-    background-color: var(--current-color) ;
-    transition: background-color 0.5s;
-    -webkit-transition: background-color 0.5s;
-}
-
-#back-to-top em,
-.navbar-btn em{
-    color: var(--fatext-color)
-}
-
-
-.hover\:bg-custom:hover,
-.hover\:bg-custom:hover em {
-    background-color: var(--current-theme-color) !important;
-    color: #fff !important;
-    transition: background-color 0.5s;
-    -webkit-transition: background-color 0.5s;
-}
-
-
-#back-to-top:hover svg,
-.navbar-btn:hover svg,
-.footer-btn:hover svg {
-    filter: invert(100%) saturate(18%) brightness(200%) contrast(100%) !important
-
-}
-
-.color-selector {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: color 0.5s,background-color 0.5s;
-    -webkit-transition: color 0.5s,background-color 0.5s;
-}
-
-.color-selector:hover{
-    color: white;
-    transition: color 0.5s,background-color 0.5s;
-    -webkit-transition: color 0.5s,background-color 0.5s;
-}
-
-::-webkit-scrollbar {
-    width: 0;
-    height: 0
-}
-
-.animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both
-}
-
-.animated.faster {
-    -webkit-animation-duration: .5s;
-    animation-duration: .5s
-}
-
-.fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn
-}
-
-.fadeOut {
-    -webkit-animation-name: fadeOut;
-    animation-name: fadeOut
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1
-    }
-    to {
-        opacity: 0
-    }
 }

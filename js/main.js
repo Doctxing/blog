@@ -1,15 +1,3 @@
-//读取json后存在session storage
-function readJson(jsonUrl,data){
-    const xhr = new XMLHttpRequest();
-    xhr.overrideMimeType("application/json");
-    xhr.open('get', jsonUrl);
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            Object.assign(data, JSON.parse(xhr.responseText));
-        }
-    };
-    xhr.send(null);
-}
 //更新主题
 function updateThemeColor(colorName) {
     if (data['colors'][colorName]) {
@@ -38,7 +26,7 @@ function closeModal(modals) {
             modals.style.display = 'none';
         }, 500);
 }
-//优雅的打开模块
+//优雅地打开模块
 function openModal(modals) {
     modals.classList.remove('fadeOut');
     modals.classList.add('fadeIn');
@@ -155,25 +143,76 @@ function refreshData(){
     Minutes = Time.getMinutes().toString().padStart(2, '0');
 }
 
+const data = {
+    "colors": {
+        "blue": {
+            "white-bg-color": "#d7e8ff",
+            "color": "#1a73e8"
+        },
+        "red": {
+            "white-bg-color": "#fbeded",
+            "color": "#c20000"
+        },
+        "pink": {
+            "white-bg-color": "#ffedf9",
+            "color": "#e374a6"
+        },
+        "grey": {
+            "white-bg-color": "#d1d1d1",
+            "color": "#808080"
+        },
+        "darkgreen": {
+            "white-bg-color": "#eafbfa",
+            "color": "#00958d"
+        },
+        "lightgreen": {
+            "white-bg-color": "#f0f6e3",
+            "color": "#7ab300"
+        }
+    },
+    "memorial": {
+        "01-08": {
+            "color": "gray",
+            "saySth": "敬爱的周总理，请您放心，如今盛世，皆您所愿"
+        },
+        "01-21": {
+            "color": "gray",
+            "saySth": "Товарищ Ленин,ваш дух революции всегда вдохновляет нас двигаться вперёд."
+        },
+        "02-19": {
+            "color": "gray",
+            "saySth": "感谢您为中国的改革开放事业所做出的卓越贡献"
+        },
+        "03-12": {
+            "color": "lightgreen",
+            "saySth": "让我们携手行动，为地球的绿色未来贡献一份力量"
+        },
+        "06-14": {
+            "color": "darkgreen",
+            "saySth": "My birthday!"
+        },
+        "09-09": {
+            "color": "gray",
+            "saySth": "毛主席一路走好！如今盛世，皆您所愿。"
+        },
+        "10-01": {
+            "color": "red",
+            "saySth": "祖国母亲生日快乐！"
+        },
+        "12-13": {
+            "color": "gray",
+            "saySth": "300000!!!!!!"
+        }
+    }
+};
 let theme,colorname;
-let data = {};
-let battery,Time,Day,month,day_in_num,date_in_num, Hour,Minutes;
+let battery,Time,Day,month,day_in_num,date_in_num,Hour,Minutes;
 const userLanguage = navigator.language || navigator.userLanguage;
 const root = document.documentElement;
 const modal = document.querySelector('.main-modal')
 const topButton = document.getElementById('back-to-top')//go back to the top Button
 const donateButton = document.getElementById('donation')
 const settingButton = document.getElementById('color-setting')
-
-const xhr = new XMLHttpRequest();
-xhr.overrideMimeType("application/json");
-xhr.open('get', '/js/db.json');
-xhr.onload = function () {
-    if (xhr.status === 200) {
-        Object.assign(data, JSON.parse(xhr.responseText));
-    }
-};
-xhr.send(null);
 
 refreshData()
 
@@ -196,7 +235,7 @@ window.addEventListener('load', function() {
             updateThemeColor(data['memorial'][date_in_num]['color']);
         } else {
             console.log("%cWhat a nice day!",'font-size: 20px');
-            updateThemeColor('darkgreen');
+            updateThemeColor('pink');
         }
         const cover=document.getElementById('cover');
         closeModal(cover);
