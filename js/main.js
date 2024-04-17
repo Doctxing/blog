@@ -227,7 +227,7 @@ if (userLanguage.startsWith('zh')){document.querySelector("html").lang="zh";}
 else {document.querySelector("html").lang="en";}
 
 //加载完毕后执行
-window.addEventListener('load', function() {
+window.onload = function() {
     setTimeout(function() {
         console.log('%c𝕴 𝖆𝖒 𝕯𝖔𝖈𝖙𝖝𝖎𝖓𝖌','font-size: 48px')
         if (data['memorial'].hasOwnProperty(date_in_num)) {
@@ -240,4 +240,4 @@ window.addEventListener('load', function() {
         const cover=document.getElementById('cover');
         closeModal(cover);
     }, 1000);// 1秒推迟
-});
+};
