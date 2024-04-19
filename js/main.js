@@ -242,7 +242,7 @@ window.onload = function() {
             updateThemeColor(data['memorial'][date_in_num]['color']);
         } else {
             console.log("%cWhat a nice day!",'font-size: 20px');
-            updateThemeColor('pink');
+            updateThemeColor('darkgreen');
         }
         const cover=document.getElementById('cover');
         closeModal(cover);
