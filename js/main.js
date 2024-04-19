@@ -89,7 +89,11 @@ function openNav() {
         document.getElementById('time').innerHTML = Hour + ':' + Minutes;
         document.getElementById('date').innerHTML = Day.substring(0, 3) + ',' + Day.substring(3);
         document.querySelector('body').style.overflow = 'hidden';
-        battery.then(show);
+        if (battery_read === 1) battery.then(show);
+        else {
+            document.getElementById('percentage').innerHTML = '';
+            document.getElementById('battery').innerHTML = ''
+        }
     }
 
     setContent()
@@ -133,7 +137,10 @@ function resetHoverColor(element) {
 }
 //更新时间数据
 function refreshData(){
-    battery = navigator.getBattery();
+    if ('getBattery' in navigator) {
+        battery = navigator.getBattery();
+        battery_read = 1;
+    }
     Time = new Date();
     Day = Time.toDateString();
     month = (Time.getMonth() + 1).toString().padStart(2, '0'); // 月份加1，因为月份从0开始，然后用padStart确保是两位数
@@ -205,7 +212,7 @@ const data = {
         }
     }
 };
-let theme,colorname;
+let theme,colorname,battery_read = 0;
 let battery,Time,Day,month,day_in_num,date_in_num,Hour,Minutes;
 const userLanguage = navigator.language || navigator.userLanguage;
 const root = document.documentElement;
