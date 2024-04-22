@@ -2,7 +2,7 @@
 
 [![license](./image/svgs/license_github.svg)](https://github.com/Doctxing/blog/blob/master/LICENSE)
 
-![こくしぼう](./image/uppage.png)
+<img src="./image/uppage.webp" alt="こくしぼう" style="max-width: 729px; width: 100%;">
 
 > 弱者没有权利，无从选择。
 > 
