@@ -221,7 +221,6 @@ const topButton = document.getElementById('back-to-top')//go back to the top But
 const donateButton = document.getElementById('donation')
 const settingButton = document.getElementById('color-setting')
 
-refreshData()
 
 window.onscroll = function (){scrollFunction();}
 
@@ -235,6 +234,7 @@ else {document.querySelector("html").lang="en";}
 
 //加载完毕后执行
 window.onload = function() {
+    refreshData()
     setTimeout(function() {
         console.log('%c𝕴 𝖆𝖒 𝕯𝖔𝖈𝖙𝖝𝖎𝖓𝖌','font-size: 48px')
         if (data['memorial'].hasOwnProperty(date_in_num)) {
