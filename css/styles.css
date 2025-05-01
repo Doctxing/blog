@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --theme-bg:#e6f8f2;
+        --theme-cl:#00958d;
+        --darkgray:#181a1e;
+        --hvbtn:#00958d;
+    }
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0
+    }
+    body {
+        @apply bg-[var(--theme-bg)] font-sans dark:bg-[var(--darkgray)] text-[var(--darkgray)] dark:text-gray-100;
+        transition: background-color ease 350ms;
+    }
+    @keyframes fadeOut {
+        from { opacity: 1;}
+        to { opacity: 0;}
+    }
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to { opacity: 1;}
+    }
+}
+
+@layer components {
+    .mod {
+        @apply h-full w-full inset-0 fixed select-none
+    }
+    .cover {
+        @apply flex flex-col items-center justify-center bg-white dark:bg-black z-50;
+        transition: background-color ease 350ms;
+        img {
+            @apply rounded-full overflow-hidden w-40 md:w-60 mb-5;
+            transition: width ease 350ms;
+        }
+        span {
+            transition:color ease 350ms;
+        }
+        /* maybe someday an effect will be added??? */
+        .short {
+            @apply text-6xl max-[410px]:text-5xl md:hidden
+        }
+        .long {
+            @apply hidden text-6xl md:block
+        }
+    }
+
+
+    /* headbar is good for now */
+    .headbar {
+        @apply fixed flex justify-center items-center z-10 inset-x-4 top-3 lg:mx-4 h-14 select-none;
+        transition: margin ease 350ms;
+        button {
+            @apply bg-white hover:bg-[var(--theme-cl)] hover:text-white dark:bg-black cursor-pointer;
+            transition:background-color ease 350ms,color ease 350ms,opacity ease 350ms !important;
+            i {
+                @apply text-[var(--theme-cl)];
+                font-size: 20px;
+                transition: color ease 350ms;
+            }
+            &:hover i {
+                @apply text-white
+            }
+        }
+        .mainbtn {
+            @apply absolute left-0 top-0 h-full items-center inline-flex px-3.5 py-3.5 rounded-3xl shadow-md;
+            img {
+                border-radius: 100vh;
+                overflow: hidden;
+            }
+            span {
+                @apply inline font-medium pt-0.5 ml-2
+            }
+        }
+        .centerbtn {
+            @apply relative flex flex-row items-center h-full p-1.5 opacity-0 md:opacity-100  max-md:-z-10 shrink grow-0 bg-white dark:bg-black rounded-full shadow-md;
+            transition: opacity ease 350ms,background-color ease 350ms;
+            button {
+                @apply px-3 py-2 mx-1 font-medium rounded-full;
+            }
+        }
+        .squarebtn {
+            @apply h-full w-14 shadow-md p-3 rounded-3xl;
+            >div {
+                @apply h-8 flex items-center justify-center
+            }
+        }
+        .rightbtn {
+            @apply absolute flex flex-row right-16 top-0 h-full md:right-0;
+            transition: right ease 350ms;
+            .support {
+                @apply h-full inline-block relative items-center shadow-md px-3.5 py-4 opacity-100 max-[410px]:opacity-0 max-[410px]:-z-10 rounded-3xl mr-2;
+                >i {
+                    font-size: 1em;
+                    @apply h-3.5
+                }
+                >span {
+                    @apply font-medium ml-1.5
+                }
+            }
+        }
+        .hidebtn {
+            @apply absolute opacity-100 md:opacity-0 md:-z-10 right-0 h-full w-14;
+            transition: opacity ease 350ms;
+        }
+    }
+
+    .translucent {
+        @apply flex justify-center items-center z-40 bg-black/40;
+    }
+
+    .window {
+        @apply shadow-lg mx-auto rounded-3xl bg-[var(--theme-bg)] dark:bg-[var(--darkgray)] p-6 text-left;
+        transition: background-color ease 350ms;
+        .topbar {
+            @apply flex justify-between items-center mb-4;
+            >span {
+                @apply text-3xl font-medium;
+                transition: color ease 350ms;
+                >i {
+                    @apply text-[var(--theme-cl)] mr-2;
+                    transition: color ease 350ms;
+                }
+            }
+            button {
+                @apply h-10 w-10 flex justify-center items-center rounded-[12px] text-red-600 hover:bg-[var(--theme-cl)] hover:text-white cursor-pointer;
+                transition: background-color ease 350ms, color ease 350ms;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .donate {
+        @apply relative h-[312px] w-60 md:h-[148px] md:w-[496px] overflow-visible;
+        transition: height ease 350ms, width ease 350ms;
+        .alipay {
+            @apply absolute left-0 top-0;
+        }
+        .paypal {
+            @apply absolute right-0 bottom-0;
+        }
+        button {
+            @apply h-[148px] w-60 cursor-pointer rounded-2xl overflow-hidden shadow-lg;
+            >div {
+                @apply absolute top-0 h-full w-full flex flex-col items-center px-4 py-6 rounded-2xl bg-white dark:bg-black;
+                transition: background-color ease 350ms, color ease 350ms, transform ease 500ms;
+            }
+            .qr {
+                @apply py-4 border-l-4 border-[var(--theme-cl)];
+                >img {
+                    @apply h-full bg-white rounded-md;
+                }
+            }
+            .mask {
+                @apply hover:bg-[var(--theme-cl)] hover:text-[white];
+                >img {
+                    @apply h-12 m-2;
+                }
+                >span {
+                    @apply text-sm font-medium mx-auto mt-4
+                }
+            }
+        }
+    }
+
+    .config {
+        @apply relative h-[340px] w-60 md:h-[214px] md:w-[400px] overflow-visible;
+        transition: height ease 350ms, width ease 350ms;
+        >div {
+            @apply w-60 md:w-48 items-center break-words;
+        }
+        .markdown {
+            @apply absolute h-[192px] md:h-[214px] left-0 top-0 rounded-2xl p-4 bg-white dark:bg-black shadow-lg;
+            transition: height ease 350ms, width ease 350ms,background-color ease 350ms,color ease 350ms;
+        }
+        .cgcl {
+            @apply absolute h-[132px] md:h-[214px] right-0 bottom-0 p-1 grid grid-cols-3 md:grid-cols-2 gap-2;
+            transition: height ease 350ms, width ease 350ms;
+            .color-select {
+                @apply h-full w-full flex justify-center items-center rounded-2xl bg-white dark:bg-black hover:bg-[var(--hvbtn)] hover:text-white cursor-pointer shadow-md;
+                transition: background-color ease 350ms, color ease 350ms;
+            }
+            .color-selected {
+                @apply bg-[var(--theme-cl)] text-white;
+            }
+        }
+    }
+
+    .friends {
+        @apply grid gap-4 grid-cols-1 md:grid-cols-2 h-[298px] w-60 md:w-[464px] overflow-scroll bg-white dark:bg-black rounded-2xl shadow-lg p-6;
+        transition: background-color ease 350ms, color ease 350ms, width ease 350ms;
+        .card {
+            @apply relative w-[192px] h-[248px] flex flex-col items-center justify-center  rounded-xl;
+            background: rgba(135, 135, 140, 0.2);
+            >img {
+                @apply w-32 rounded-full border border-white dark:border-black;
+                transition: border ease 350ms;
+            }
+            >p {
+                @apply text-[1.5rem];
+                font-weight: 400;
+            }
+            .links {
+                @apply flex items-center justify-center gap-2;
+                a {
+                    @apply flex items-center justify-center hover:bg-[var(--theme-cl)] rounded-xl h-10 w-10 text-[var(--theme-cl)] hover:text-white;
+                    transition: background-color ease 350ms,color ease 350ms;
+                    i {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    nav {
+        @apply fixed bg-white dark:bg-black z-40;
+        transition: background-color ease 350ms;
+        .states {
+            @apply flex items-center justify-between mx-8 mt-8 mb-6 text-center;
+            transition: color ease 350ms;
+            .battery {
+                @apply flex flex-row items-center
+            }
+            svg{
+                @apply h-[18px] w-[18px] fill-black dark:fill-white mr-1;
+                transition: fill ease 350ms;
+            }
+        }
+        .bottons {
+            @apply grid grid-cols-2 gap-2 mx-8 mb-8;
+            button {
+                @apply flex items-center h-[52px] bg-[var(--theme-cl)] shadow-md rounded-full text-left text-white px-4 text-lg;
+                i {
+                    @apply h-5 w-5 mr-2 flex justify-center;
+                    font-size: 20px;
+                }
+            }
+        }
+        .downhover {
+            @apply h-full bg-[var(--theme-bg)] shadow-inner dark:bg-[var(--darkgray)] rounded-t-[3rem];
+            transition: background-color ease 350ms;
+            div {
+                @apply fixed w-full bottom-0 flex justify-center my-6;
+            }
+            button {
+                @apply w-14 h-14 bg-white text-red-600 dark:bg-black hover:bg-[var(--theme-cl)] hover:text-white cursor-pointer shadow-md rounded-2xl;
+                font-size: 24px;
+                transition: background-color ease 350ms, color ease 350ms;
+            }
+        }
+    }
+
+    .display {
+        @apply min-h-screen flex items-center justify-center w-full px-5 pt-[88px] pb-20;
+        >div {
+            @apply w-full max-w-5xl min-h-60  bg-white dark:bg-black shadow-xl break-words;
+            border-radius: 2.5rem;
+            transition: background-color ease 350ms,color ease 350ms;
+        }
+    }
+
+    .totop {
+        @apply z-10 fixed bottom-8 max-[410px]:bottom-16 right-6 h-14 w-14 p-4 rounded-3xl shadow-md bg-white dark:bg-black hover:bg-[var(--theme-cl)] text-[var(--theme-cl)] hover:text-white text-center;
+        transition: background-color ease 350ms, color ease 350ms, bottom ease 350ms;
+        i {
+            @apply h-6 w-6;
+            font-size: 24px;
+        }
+    }
+
+    footer {
+        @apply bg-white dark:bg-black p-8 select-none;
+        transition: background-color ease 350ms;
+        div {
+            @apply relative h-14 max-[410px]:h-28;
+            transition: height ease 350ms;
+        }
+        .name {
+            @apply absolute top-0 left-0 h-14 flex items-center py-2 gap-4;
+            .spot {
+                @apply h-4 w-4 rounded-full bg-[var(--theme-cl)];
+                transition: background-color ease 350ms;
+            }
+            a {
+                @apply text-xl font-medium;
+                transition: color ease 350ms;
+            }
+        }
+        .links {
+            @apply absolute right-14 bottom-0 h-14 flex flex-row py-2 gap-1 max-[410px]:right-[calc(100%-172px)];
+            transition: right ease 350ms;
+            button {
+                @apply flex items-center justify-center hover:bg-[var(--theme-cl)] rounded-xl h-10 w-10 text-[var(--theme-cl)] hover:text-white;
+                transition: background-color ease 350ms,color ease 350ms;
+                i {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@layer utilities {
+    .fadeout {
+        animation: fadeOut 0.95s forwards;
+    }
+    .fadein {
+        animation: fadeIn 1s forwards;
+    }
+    .fadeout.faster {
+        animation: fadeOut 0.45s forwards;
+    }
+    .fadein.faster {
+        animation: fadeIn 0.5s forwards;
+    }
+}

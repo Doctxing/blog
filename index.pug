@@ -1,0 +1,148 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        meta(name="description", content="Hello,I'm Doctxing,welcome to my blog!")
+        meta(property="og:title", content="Doctxing 的博客")
+        meta(property="og:description", content="What's this? miao~")
+        meta(property="og:image", content="https://let.doctxing.win/fractal-mka.jpeg")
+        meta(property="og:url", content="https://let.doctxing.win")
+        link(rel="icon", href="./image/avatar_round.webp")
+        title DoctxingのBlog
+        link(rel="stylesheet" href="./css/styles.css")
+        link(rel="stylesheet" href="./css/icons.css")
+        link(rel="stylesheet" href="./css/display.css")
+        script(src="./js/main.js")
+    body
+        .mod.cover
+            img(src="./image/avatar.webp")
+            span.short DXのBlog
+            span.long DoctxingのBlog
+        header.headbar
+            button.link.mainbtn
+                img(src="./image/avatar.webp" width="26")
+                span DXのBlog
+            .centerbtn
+                button.link.blogs Blogs
+                button.link.storage Storage
+                button(onclick='openModal("mates")') Mates
+                button(onclick='openModal("settings")') Settings
+            .rightbtn
+                button.support(onclick='openModal("support")')
+                    i.fa-solid.fa-yen-sign
+                    span Support
+                button.squarebtn.dark-theme
+                    div: i.fa-solid.fa-shake.fa-moon
+            .hidebtn
+                button.squarebtn(onclick='openModal("menu")')
+                    div: i.fa-solid.fa-bars
+            script changeTheme(isDark);
+        .mod.translucent.support.faster.hidden
+            .window
+                .topbar
+                    span
+                        i.fa-solid.fa-circle-dollar-to-slot
+                        | Support
+                    button.closemod
+                        i.fa-solid.fa-xmark
+                .donate
+                    button.alipay
+                        .qr
+                            img(src="./image/alipay_qr.svg")
+                        .mask
+                            img(src="./image/alipay.svg")
+                            span Alipay
+                    button.paypal
+                        .mask
+                            img(src="./image/paypal.svg")
+                            span Paypal
+        .mod.translucent.settings.faster.hidden
+            .window
+                .topbar
+                    span
+                        i.fa-solid.fa-brush
+                        | Settings
+                    button.closemod
+                        i.fa-solid.fa-xmark
+                .config
+                    .markdown
+                        a.text-2xl Title
+                        blockquote
+                            p 私はすでに完人となりました
+                        p.text-center this is a test
+                            a hihi
+                    .cgcl
+                        button.color-select.color-selected teal
+                        - const colors = ['lime','blue','rust','gray','aura']
+                            each color in colors
+                                button.color-select=color
+        .mod.translucent.mates.faster.hidden
+            .window
+                .topbar
+                    span
+                        i.fa-solid.fa-group-arrows-rotate
+                        | Mates
+                    button.closemod
+                        i.fa-solid.fa-xmark
+                .friends
+                    .card
+                        img(src="https://r2proxy.oldkingok.cc/icon.png")
+                        p oldkingOK
+                        .links
+                            a(href="https://oldkingok.cc" target="_blank"): i.fa-solid.fa-blog
+                            a(href="https://github.com/oldkingok" target="_blank"): i.fa-brands.fa-github
+                    .card
+                        img(src="https://eupho.me/img/logo.png")
+                        p Swizzzer
+                        .links
+                            a(href="https://eupho.me/" target="_blank"): i.fa-solid.fa-blog
+                            a(href="https://github.com/Swizzzer" target="_blank"): i.fa-brands.fa-github
+        nav.mod.menu.faster.hidden
+                .states
+                    //- to remember Erwin Schrödinger (12 August 1887 – 4 January 1961)
+                    .time Jan 4, 12:00
+                    .battery
+                        svg(viewBox="0 0 24 24"): path
+                        a 100%
+                .bottons
+                    button.link.blogs
+                        i.fa-solid.fa-newspaper
+                        | Blogs
+                    button.link.storage
+                        i.fa-solid.fa-sd-cards
+                        | Storage
+                    button(onclick='openModal("mates")')
+                        i.fa-solid.fa-group-arrows-rotate
+                        | Mates
+                    button(onclick='openModal("settings")')
+                        i.fa-solid.fa-brush
+                        | Settings
+                .downhover
+                    div: button.closemod
+                        i.fa-solid.fa-xmark
+        .display
+            div: div(id="app")
+        .totop.faster.hidden
+            i.fa-solid.fa-up-to-line
+        footer: div
+            .name
+                div.spot
+                a Doctxing
+            .links
+                button
+                    i.fa-brands.fa-bilibili
+                button
+                    i.fa-brands.fa-github
+                button
+                    i.fa-brands.fa-telegram
+                button
+                    i.fa-brands.fa-x-twitter
+    script(src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js")
+    script(src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js")
+    script(src="//cdn.jsdelivr.net/npm/docsify-latex@0/dist/docsify-latex.min.js")
+    script(src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-js.min.js")
+    script(src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js")
+    script(src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js")
+
+

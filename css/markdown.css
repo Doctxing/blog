@@ -1,0 +1,400 @@
+.markdown-section {
+    margin: 3rem;
+}
+
+.markdown-section,
+.markdown{
+    position: relative;
+
+    blockquote,
+    details,
+    figure,
+    form,
+    iframe,
+    ol,
+    output,
+    p,
+    pre,
+    table,
+    ul {
+        margin-block: 1rem;
+    }
+
+    a {
+        &.anchor {
+            color: inherit;
+
+            &:not(:hover) {
+                text-decoration-color: transparent;
+            }
+
+            &:hover {
+                translate: 0 0 0; /* Safari Fix: Forced redraw */
+                text-decoration-color: var(--theme-cl);
+            }
+        }
+    }
+
+    p {
+        &.tip, &.warn {
+            position: relative;
+            margin: 2em 0;
+            padding: 12px 24px 12px 30px;
+            border-radius: 5px;
+            background: rgba(143, 143, 143, 0.2);
+            &::before {
+                content: "*";
+                position: absolute;
+                top: 14px;
+                left: -12px;
+                width: 20px;
+                height: 20px;
+                color: #fff;
+                font: 700 14px/20px Dosis, "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+                border-radius: 50%;
+                text-align: center;
+            }
+        }
+        &.tip {
+            border-left: 5px solid #f66;
+            &::before {
+                content: "!";
+                background: #f66;
+            }
+        }
+        &.warn {
+            border-left: 5px solid #fa0;
+            &::before {
+                content: "?";
+                background: #fa0;
+            }
+        }
+    }
+
+    blockquote {
+        position: relative;
+        overflow: auto;
+        margin-inline: 0;
+        padding: 12px 24px 12px 30px;
+        border: solid var(--theme-cl);
+        border-width: 0 0 0 5px;
+        border-radius: 5px;
+        background: rgba(143, 143, 143, 0.2);
+        transition: border-left-color 0.35s ease;
+
+        > :first-child {
+            margin-top: 0;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    hr {
+        margin-block: 2em;
+        border-color: rgba(140, 140, 140, 0.35);
+    }
+
+    iframe {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        border: 1px solid #8a8a8a;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    kbd {
+        background-color: rgba(188, 188, 188, 0.25);
+        border-radius: 3px;
+        border: 1px solid rgba(119, 119, 119, 0.3);
+        display: inline-block;
+        font-size: 0.85em;
+        font-weight: 700;
+        line-height: 1;
+        padding: 2px 4px;
+        white-space: nowrap;
+    }
+
+    /* Code, Output, Samp */
+    /* ---------------------------------- */
+    code,
+    output,
+    pre {
+        border-radius: 5px;
+    }
+
+    code,
+    pre,
+    samp {
+        font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    }
+
+    output,
+    pre[data-lang] {
+        position: relative;
+
+        &::after {
+            content: attr(data-lang);
+            position: absolute;
+            top: 0.3rem;
+            right: 0.5rem;
+            font-family: system-ui, sans-serif;
+            letter-spacing: 0.02em;
+            line-height: 1;
+            opacity: 0.5;
+        }
+    }
+
+    code,
+    samp {
+        white-space: pre-wrap;
+    }
+
+    code {
+        margin: 0.1em 0.1em;
+        padding: 0.2em 0.35em;
+        font-size: 85%;
+        background: rgba(166, 166, 166, 0.3);
+
+        .token {
+            position: relative;
+            left: auto;
+            transition: color 0.35s ease;
+        }
+    }
+
+    output {
+        display: block;
+        padding: 1.7rem 1.4rem 1.4rem;
+        border: 1px solid;
+
+        > :first-child {
+            margin-top: 0;
+        }
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    pre[data-lang] {
+        /* NOTE: !important declaration are intended to override third-party Prism theme values */
+        padding: 0 !important;
+        border-radius: 10px !important;
+        font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace !important;
+        font-size: 0.875rem !important;
+        line-height: inherit !important;
+        tab-size: 2 !important;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-wrap: normal;
+        word-break: normal;
+        hyphens: none;
+
+        &:only-child {
+            margin: 0;
+        }
+
+        > code {
+            display: block;
+            overflow: auto;
+            margin: 0 !important;
+            padding: 0 !important;
+            padding-block: 1.5rem !important;
+            padding-inline: 1.5rem !important;
+            background: rgba(143, 143, 143, 0.2);
+            color: inherit;
+            font-size: inherit;
+            white-space: inherit;
+        }
+    }
+
+    samp {
+        .token {
+            position: relative;
+            left: auto;
+        }
+    }
+
+    /* Headings */
+    /* --------------------------------- */
+    :where(h1, h2, h3, h4, h5, h6) {
+        margin: 2rem 0 0.5em;
+        color: var(--theme-cl);
+
+        /* Prevent long titles from causing horizontal scrolling */
+        &[id] a {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    h1,
+    h2 {
+        margin-top: 2.5rem;
+    }
+
+    :is(h1, h2, h3, h4, h5, h6) + * {
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    h2 {
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.5em;
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        &,
+        & + :not(h1, h2, h3, h4) {
+            font-size: 1rem;
+        }
+    }
+
+    a {
+        color: var(--theme-cl);
+        font-weight: 600;
+        transition: color 0.35s;
+    }
+
+    /* Lists */
+    /* ---------------------------------- */
+    ol,
+    ul {
+        margin: 0;
+        padding-inline-start: 1.5em;
+        & & {
+            margin-top: 0.25em;
+        }
+        > li {
+            &:not(:last-child) {
+                margin-bottom: 0.25em;
+            }
+        }
+    }
+
+    ol > li{
+        list-style-type: lower-alpha;
+    }
+    ul > li {
+        list-style-type: disc;
+    }
+
+    .leftline{
+        position: relative;
+        padding-left: 10px;
+        line-height: 3em;
+        border-left: 2px dashed #999; /* 虚线 */
+        list-style-type: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: 1.1em;
+            width: 12px;
+            height: 12px;
+            background: white;
+            border: 2px solid #666;
+            border-radius: 50%;
+            z-index: 1;
+        }
+    }
+    ul.task-list {
+        padding-inline-start: 0.6em;
+
+        input[type='checkbox'] {
+            margin-top: -0.15em;
+            margin-right: 0.2em;
+            margin-left: -1.6em;
+        }
+
+        li {
+            position: relative;
+            margin-top: 0.2em;
+            margin-bottom: 0.2em;
+            margin-left: 1.6em;
+            list-style-type: none;
+
+            /* Vertical Connector */
+            &:has(.task-list) {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: 1em;
+                    left: -1em;
+                    bottom: 0;
+                    border-left: 1px solid;
+                }
+            }
+        }
+    }
+
+    /* Tables */
+    /* ---------------------------------- */
+    th,
+    td {
+        padding: 0.25em 0.75em;
+        border: 1px solid rgba(119, 119, 119, 0.4);
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow: auto;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    thead {
+        display: none;
+        font-weight: 700;
+        text-align: left;
+
+        &:has(th:not(:empty)) {
+            display: table-header-group;
+        }
+    }
+
+    th {
+
+        &:not([align]) {
+            text-align: left;
+        }
+    }
+
+    tr {
+        border-top: 1px solid;
+
+        &:nth-child(2n) {
+
+        }
+    }
+}

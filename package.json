@@ -1,0 +1,19 @@
+{
+  "name": "blog",
+  "version": "1.3.0",
+  "scripts": {
+    "build": "./build.sh",
+    "clean": "rm -rf public"
+  },
+  "author": "Doctxing",
+  "license": "MIT",
+  "description": "This is my blog",
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  },
+  "dependencies": {
+    "pug-cli": "1.0.0-alpha6",
+    "terser": "5.39.0",
+    "uglifycss": "0.0.29"
+  }
+}
