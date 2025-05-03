@@ -199,7 +199,7 @@ window.$docsify = {
                                      ${item.dat.toLocaleDateString('en-US', {month: 'short', day: '2-digit',})}</li>`).join('')
                                 +'</ul>'
                                 ).join('');
-                    console.log(compiled)
+                    // console.log(compiled)
                     next(compiled);
                 } else {
                     next(content);

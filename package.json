@@ -3,7 +3,8 @@
   "version": "1.3.0",
   "scripts": {
     "build": "./build.sh",
-    "clean": "rm -rf public"
+    "clean": "rm -rf public",
+    "clean:all": "npm run clean && rm -rf node_modules package-lock.json"
   },
   "author": "Doctxing",
   "license": "MIT",
