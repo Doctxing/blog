@@ -52,7 +52,11 @@ const updateContent = {
         } else {battery.innerHTML = ''}
     }
 }
-
+//**
+//* Modal Control
+//* to be mentioned, openModal(null) can be used to close all the modals
+//* it will also close all the modals while opening a new one
+//*/
 function openModal(names,isOpen=true) {
     const modals = (typeof names === 'string')?document.querySelector('.mod.'+names):names
     if (isOpen) document.querySelectorAll('.mod').forEach(modal => {if (modal !== modals && modal.classList.contains('fadein')) openModal(modal,false)});
@@ -93,6 +97,12 @@ window.onload = () => {
         }
     })
     document.querySelectorAll('button.closemod').forEach(btn => btn.onclick = () => openModal(null))
+    document.querySelectorAll('.mod.translucent').forEach(modal => {
+        const child_window = modal.querySelector('.window')
+        if (child_window) modal.onclick = (event) => {
+            if (!child_window.contains(event.target)) openModal(null)
+        }
+    })
     window.matchMedia('(min-width: 768px)').onchange = (event) => {event.matches?openModal('menu',false):null}
     document.querySelector('.totop').onclick = () => window.scrollTo({ top: 0, behavior: "smooth" })
     window.onscroll = () => {
@@ -157,7 +167,7 @@ window.$docsify = {
                     next(content);
                 }
                 window.scrollTo({ top: 0, behavior: "smooth" })
-                openModal('menu',false)
+                openModal(null)
             });
             hook.doneEach(() => {
                 const el = document.querySelector('#main');
