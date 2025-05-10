@@ -37,7 +37,17 @@ $$ \langle Le^{j\omega t}, e^{j\omega_1 t} \rangle = \langle e^{j\omega_1 t}, Le
 
 因此傅立叶变换具有正交性。
 
-!> 在 `DFT` 中，内积函数应为 $$ \sum_{n=0}^{N-1} e^{j\omega_0 n} \cdot e^{j\omega_1 n} $$ 而 `DTFT` 可以看作是 $N \to \infty$ 下的 `DFT` 内积，虽然不再严格如此，但是也有优良的性质。
+!> 在 `DFT` 中，内积函数应为 $$ \sum_{n=0}^{N-1} e^{j\omega_0 n} \cdot e^{-j\omega_1 n} $$ 而 `DTFT` 可以看作是 $N \to \infty$ 下的 `DFT` 内积，虽然不再严格如此，但是也有优良的性质。
+
+下面列出了几种傅立叶转换的对应的内积函数：
+
+| 名称 | 正交基底 | 内积定义 |
+|:----:|:----:|:----:|
+| FS | $ e^{jk\omega_0 t} $ | $ \displaystyle \int_T x(t) y^*(t) dt $ |
+| FT | $ e^{j\omega t} $ | $ \displaystyle \int_{\infty} x(t) y^*(t) \, dt $ |
+| DTFS | $ e^{j\frac{2\pi}{N}kn} $ | $ \displaystyle \sum_N x[n] y^*[n] $ |
+| DTFT | $ e^{j\omega n} $ | $ \displaystyle \sum_{\infty} x[n] y^*[n] $ |
+| DFT | $ e^{j\frac{2\pi}{N}kn} $| $\displaystyle \sum_N x[n] y^*[n] $|
 
 ## 杂项
 
