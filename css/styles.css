@@ -111,7 +111,7 @@
     }
 
     .translucent {
-        @apply flex justify-center items-center z-40 bg-black/40;
+        @apply flex justify-center items-center z-40 bg-black/40 backdrop-blur-sm;
     }
 
     .window {
