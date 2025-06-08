@@ -19,7 +19,11 @@
 - 一些ctf题解？
 - 一些奇奇喵喵的想法
 
-!>如果博客有任何bug，请在 [github/doctxing/blog](https://github.com/doctxing/blog) 提交issue，误会尽快修改
+!>如果博客有任何bug，请在 [github/doctxing/blog](https://github.com/doctxing/blog) 提交issue，我会尽快修改。
+
+blog采用 `pug` 加 `taiwind v3` ，虽然v4已经出了，但是考虑到兼容性还得是v3:
+
+> Tailwind CSS v4.0 is designed for Safari 16.4+, Chrome 111+, and Firefox 128+. If you need to support older browsers, stick with v3.4 until your browser support requirements change.
 
 虽然理论应该没啥问题了，新版本已经注意到了太多细节。
 

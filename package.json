@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "pug-cli": "1.0.0-alpha6",
-    "terser": "5.39.0",
+    "terser": "5.41.0",
     "uglifycss": "0.0.29"
   }
 }
