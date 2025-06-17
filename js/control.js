@@ -69,6 +69,7 @@ function openModal(names,isOpen=true) {
     }
 }
 let totopVisible = false;
+let hidetimeout = null;
 window.onload = () => {
     document.querySelector('.dark-theme').onclick = () => changeTheme()
     document.querySelectorAll('.donate button').forEach(btn => {
@@ -111,8 +112,11 @@ window.onload = () => {
         const modals = document.querySelector('.totop');
         modals?.classList.toggle("fadein", visible);
         modals?.classList.toggle("fadeout", !visible);
-        const delay = modals.classList.contains('faster') ? 450 : 950;
-        visible?modals.classList.remove('hidden'):setTimeout(() => {modals.classList.add('hidden');}, delay);
+        hidetimeout?(clearTimeout(hidetimeout),hidetimeout = null):null;
+        visible?modals.classList.remove('hidden'):(hidetimeout = setTimeout(() => {
+            modals.classList.add('hidden');
+            hidetimeout = null;
+        }, 450));
         totopVisible = visible;
     }
     document.querySelectorAll("footer .links button").forEach(button => {
