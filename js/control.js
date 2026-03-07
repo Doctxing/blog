@@ -1,27 +1,27 @@
 const colors = {
     "blue": {
-        "bg-color": "#e4edff",
-        "color": "#2a6fc5"
+        "bg-color": "#dcf2ff",
+        "color": "#6594b0"
     },
     "rust": {
-        "bg-color": "#fff4ee",
-        "color": "#bc3109"
+        "bg-color": "#ffebd8",
+        "color": "#ae8064"
     },
     "aura": {
-        "bg-color": "#f3eeff",
-        "color": "#6d52bf"
+        "bg-color": "#ebe8f2",
+        "color": "#7563a7"
     },
     "gray": {
-        "bg-color": "#dfdfdf",
-        "color": "#7a7a7a"
+        "bg-color": "#f5f5f5",
+        "color": "#9d9d9d"
     },
     "teal": {
-        "bg-color": "#e6f8f2",
-        "color": "#00958d"
+        "bg-color": "#e3f0ee",
+        "color": "#5e9a8a"
     },
     "lime": {
-        "bg-color": "#f0f6e4",
-        "color": "#7ab300"
+        "bg-color": "#f5f7ea",
+        "color": "#b5c574"
     }
 };
 const updateContent = {

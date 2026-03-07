@@ -5,9 +5,9 @@
 @layer base {
     :root {
         --theme-bg:#e6f8f2;
-        --theme-cl:#00958d;
+        --theme-cl:#5e9a8a;
         --darkgray:#181a1e;
-        --hvbtn:#00958d;
+        --hvbtn:#5e9a8a;
     }
     ::-webkit-scrollbar {
         width: 0;
