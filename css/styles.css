@@ -4,10 +4,10 @@
 
 @layer base {
     :root {
-        --theme-bg:#e6f8f2;
-        --theme-cl:#5e9a8a;
+        --theme-bg:#ebe8f2;
+        --theme-cl:#7563a7;
         --darkgray:#181a1e;
-        --hvbtn:#5e9a8a;
+        --hvbtn:#7563a7;
     }
     ::-webkit-scrollbar {
         width: 0;
