@@ -158,67 +158,7 @@ window.$docsify = {
     hideNavbar: true,
     auto2top: false,
     plugins: [
-        function fadePlugin(hook, vm) {
-            hook.beforeEach((content, next) => {
-                const el = document.querySelector('#main');
-                if (el) {
-                    el.classList.remove('fadein');
-                    el.classList.add('fadeout', 'faster');
-                    setTimeout(() => {
-                        next(content);
-                    }, 500);
-                } else {
-                    next(content);
-                }
-                window.scrollTo({ top: 0, behavior: "smooth" })
-                openModal(null)
-            });
-            hook.doneEach(() => {
-                const el = document.querySelector('#main');
-                if (el) {
-                    el.classList.remove('fadeout');
-                    el.classList.add('fadein');
-                }
-            });
-        },
-        function archivePlugin(hook, vm) {
-            hook.beforeEach((content, next) => {
-                const path = vm.route.path
-                if (path === '/blogs/' || path === '/storage') {
-                    // 解析 markdown 结构为 JSON
-                    const lines = content.trim().split('\n');
-                    const items = [];
-                    const firstLine = lines[0];
-                    for (let i = 0; i < lines.length; i+=1 ) {
-                        const title = lines[i]?.match(/title:\s*(.*)/)?.[1]?.trim();
-                        if (title) {
-                            const date = lines[i + 1]?.match(/date:\s*(.*)/)?.[1]?.trim();
-                            const link = lines[i + 2]?.match(/link:\s*(.*)/)?.[1]?.trim();
-                            if (date && link) {
-                                const dat = new Date(date)
-                                items.push({ title, dat, link});
-                            }
-                        }
-                    }
-                    items.sort((a, b) => b.dat - a.dat);
-                    const grouped = {};
-                    for (const item of items) {
-                        const year = item.dat.getFullYear()
-                        if (!grouped[year]) grouped[year] = [];
-                        grouped[year].push(item);
-                    }
-                    const compiled = firstLine + '\n\n'
-                            +Object.keys(grouped).sort((a, b) => b - a).map(year => '\n\n### ' + year + '\n\n<ul>'
-                                + grouped[year].map(item => `<li class="leftline"><a href="${item.link}">${item.title}</a> - 
-                                     ${item.dat.toLocaleDateString('en-US', {month: 'short', day: '2-digit',})}</li>`).join('')
-                                +'</ul>'
-                                ).join('');
-                    // console.log(compiled)
-                    next(compiled);
-                } else {
-                    next(content);
-                }
-            });
-        }
+        fadePlugin,
+        archivePlugin
     ]
 }

@@ -195,7 +195,7 @@
         @apply grid gap-4 grid-cols-1 md:grid-cols-2 h-[298px] w-60 md:w-[464px] overflow-scroll bg-white dark:bg-black rounded-2xl shadow-lg p-6;
         transition: background-color ease 350ms, color ease 350ms, width ease 350ms;
         .card {
-            @apply relative w-[192px] h-[248px] flex flex-col items-center justify-center  rounded-xl;
+            @apply relative w-[192px] h-[248px] flex flex-col items-center justify-center  rounded-3xl;
             background: rgba(135, 135, 140, 0.2);
             >img {
                 @apply w-32 rounded-full border border-white dark:border-black;
@@ -215,9 +215,57 @@
                     }
                 }
             }
-
         }
+    }
+    
+    .blogs-list {
+        @apply grid gap-4 mb-10;
+        grid-template-columns: 1fr;
+        >a {
+            @apply relative overflow-hidden rounded-2xl shadow-md block no-underline hover:-translate-y-1 hover:shadow-lg;
+            background-size: cover;
+            background-position: center;
+            min-height: 140px;
+            transition: color 350ms ease, transform 350ms ease, box-shadow 350ms ease !important;
 
+            &::before,&::after {
+                content: '';
+                @apply absolute inset-0;
+                transition: opacity .35s ease;
+            }
+            
+            &::before {
+                background: linear-gradient(to right, white 0%, white 28%, transparent 72%);
+                opacity: 1;
+            }
+            
+            &::after {
+                background: linear-gradient(to right, black 0%, black 28%, transparent 72%);
+                opacity: 0;
+            }
+            
+            :where(.dark,.dark *) & {
+                &::before { opacity: 0; }
+                &::after  { opacity: 1; }
+            }
+
+            
+            >div {
+                @apply relative flex flex-col justify-end;
+                z-index: 1;
+                height: 100%;
+                min-height: 140px;
+                padding: 1.25rem 1.5rem;
+                .title {
+                    @apply text-lg font-semibold leading-snug;
+                }
+
+                .date {
+                    @apply text-sm mt-1;
+                    opacity: 0.65;
+                }
+            }
+        }
     }
 
     nav {

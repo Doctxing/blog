@@ -306,26 +306,30 @@
         list-style-type: disc;
     }
 
-    .leftline{
-        position: relative;
-        padding-left: 10px;
-        line-height: 3em;
-        border-left: 2px dashed #999; /* 虚线 */
-        list-style-type: none;
-
-        &::before {
-            content: "";
-            position: absolute;
-            left: -7px;
-            top: 1.1em;
-            width: 12px;
-            height: 12px;
-            background: white;
-            border: 2px solid #666;
-            border-radius: 50%;
-            z-index: 1;
+    /* Storage directory list */
+    .storage {
+        padding-inline-start: 0;
+        border-top: 1px solid rgba(128, 128, 128, 0.25);
+        >li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            padding: 0.6rem 0.4rem;
+            margin-bottom: 0;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+            list-style-type: none;
+            >a {
+                font-weight: 500;
+            }
+            >span {
+                flex-shrink: 0;
+                font-size: 0.85em;
+                opacity: 0.55;
+            }
         }
     }
+
     ul.task-list {
         padding-inline-start: 0.6em;
 

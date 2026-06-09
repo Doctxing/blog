@@ -38,7 +38,7 @@ npx uglifycss ./css/markdown.css ./css/code.css --output "$OUT_DIR/css/display.c
 
 echo "🚧 复制静态资源..."
 cp -r ./image/ "$OUT_DIR/image"
-cp -r ./blogs/ "$BLOG_OUT"
+cp -r ./blogs/. "$BLOG_OUT/"
 find "$BLOG_OUT" -type f -name info -delete
 cp ./*.md "$OUT_DIR/"
 
@@ -52,13 +52,19 @@ for dir in "$BLOG_DIR"/*/; do
 
     title=$(grep '^title:' "$info_file" | sed 's/^title:[[:space:]]*//')
     date=$(grep '^date:' "$info_file" | sed 's/^date:[[:space:]]*//')
+    cover=$(grep '^cover:' "$info_file" | sed 's/^cover:[[:space:]]*//' || true)
     slug=$(basename "$dir")
-    entries+=("$date|$title|$slug")
+    entries+=("$date|$title|$slug|$cover")
 done
 
 for line in $(printf "%s\n" "${entries[@]}" | sort -r); do
-    IFS='|' read -r date title slug <<< "$line"
-    printf -- "- title: %s\n  date: %s\n  link: #/blogs/%s/\n\n" "$title" "$date" "$slug" >> "$BLOG_INDEX"
+    IFS='|' read -r date title slug cover <<< "$line"
+    if [[ -n "$cover" ]]; then
+        cover_path="./blogs/$slug/$cover"
+    else
+        cover_path="./image/fractal-mka.jpeg"
+    fi
+    printf -- "- title: %s\n  date: %s\n  link: #/blogs/%s/\n  cover: %s\n\n" "$title" "$date" "$slug" "$cover_path" >> "$BLOG_INDEX"
 done
 
 echo "✅ 构建完成，输出目录：$OUT_DIR"
